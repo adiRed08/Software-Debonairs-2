@@ -2855,7 +2855,7 @@ PrefabInstance:
       objectReference: {fileID: 7726336546571010632}
     - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
       propertyPath: possibleItems.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
       propertyPath: possibleItems.Array.data[0]
@@ -2865,6 +2865,22 @@ PrefabInstance:
       propertyPath: possibleItems.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: dde5d173691720f48b9883a795de5b1e, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: af5f073c595379d408cdac96f3dc61de, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: cc76d789f9f7daa4cbb45c1bfab09d5e, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 303be118a5c96ae4490464dbdc84c7b5, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ebce865a69072e4796332471a228e46, type: 2}
     - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
       propertyPath: inventorySlots.Array.data[0]
       value: 
@@ -4204,7 +4220,7 @@ MonoBehaviour:
     name: 
     scene: 0
     playerID: 0
-    items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    items: []
     fileName: 
   inventoryManager: {fileID: 1551858662}
   inventoryItemPrefab: {fileID: 8440631989903164429, guid: fe93845025d93454aa7779d5f62e91d6, type: 3}
