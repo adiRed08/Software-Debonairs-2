@@ -23,8 +23,10 @@ public class SaveFile : MonoBehaviour
     {
         public string name;
         public int scene;
+        public int chapter;
         public long playerID;
         public string[] items = new string[14];
+        // public InventoryItem[] items = new InventoryItem[14];
         public string fileName;
     }
 
@@ -38,6 +40,7 @@ public class SaveFile : MonoBehaviour
             Save newSave = new();
             newSave.name = inputName.text;
             newSave.scene = 1;
+            newSave.chapter = 1;
             for (int i = 0; i < newSave.items.Length; i++) {
                 newSave.items[i] = "-1_0";
             }
@@ -75,31 +78,18 @@ public class SaveFile : MonoBehaviour
         }
     }
 
-    public void Delete()
+    public static void Delete(string name)
     {
-        db = GameObject.FindGameObjectWithTag("dbTag").GetComponent<PlayerDB>();
-        string profileId = saveFileName.text;
-
-        // base case - if the profileId is null, return right away
-        if (profileId == null)
+        //db = GameObject.FindGameObjectWithTag("dbTag").GetComponent<PlayerDB>();
+        string fileName = name;
+        string directory = Application.dataPath + "/Saves/" + fileName + ".json";
+        if (File.Exists(directory))
         {
-            return;
-        }
-
-        string fullPath = (Application.dataPath + "/Saves/" + profileId + ".json");
-        Debug.Log(fullPath);
-        
-        
-        // ensure the data file exists at this path before deleting the directory
-        if (File.Exists(fullPath))
-        {
-            // delete the profile folder and everything within it
-            File.Delete(Application.dataPath + "/Saves/" + profileId + ".json");
-            deleteUser(long.Parse(profileId)); 
+            File.Delete(Application.dataPath + "/Saves/" + fileName + ".json"); 
         }
         else
         {
-            Debug.LogWarning("Tried to delete profile data, but data was not found at path: " + fullPath);
+            Debug.LogWarning("Tried to delete profile data, but data was not found at path: " + directory);
         }
         
     } 
@@ -110,6 +100,26 @@ public class SaveFile : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/Saves/" + filename + ".json");
         Save data = JsonUtility.FromJson<Save>(json);
         return data;
+    }
+
+    public static void updateSave(string name, Save updatedSave)
+    {
+        //db = GameObject.FindGameObjectWithTag("dbTag").GetComponent<PlayerDB>();
+        string fileName = name;
+        string directory = Application.dataPath + "/Saves/" + fileName + ".json";
+        if (File.Exists(directory))
+        {
+            string json = File.ReadAllText(Application.dataPath + "/Saves/" + fileName + ".json");
+            Save data = JsonUtility.FromJson<Save>(json);
+            string jsonToSave = JsonUtility.ToJson(updatedSave, true);
+            File.WriteAllText(Application.dataPath + "/Saves/" + fileName + ".json", jsonToSave);
+            insLastAccess(long.Parse(name));
+        }
+        else
+        {
+            Debug.Log("File does not exist");
+            return;
+        }
     }
     
 }

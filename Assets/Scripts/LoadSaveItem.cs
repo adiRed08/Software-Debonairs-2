@@ -5,6 +5,7 @@ using static PlayerDB;
 using System;
 using static GameSaveLoader;
 using TMPro;
+using static SaveFile;
 
 public class LoadSaveItem : MonoBehaviour, IPointerClickHandler
 {
@@ -16,11 +17,25 @@ public class LoadSaveItem : MonoBehaviour, IPointerClickHandler
     public delegate void clickSaveItem(string msg);
     public static event clickSaveItem clickSaveItemAnnounce;
 
+    public TextMeshProUGUI ChapterNo;
+    public TextMeshProUGUI SceneNo;
+
+
 
     private void Start()
     {
-        TextMeshProUGUI[] texts = this.GetComponentsInChildren<TextMeshProUGUI>();
-        editTextBox.text = texts[1].text; 
+        //TextMeshProUGUI[] texts = this.GetComponentsInChildren<TextMeshProUGUI>();
+        //editTextBox.text = texts[1].text;
+        try
+        {
+            ChapterNo.text = getChapterID(long.Parse(name)).ToString();
+            SceneNo.text = getSceneID(long.Parse(name)).ToString();
+        }
+        catch
+        {
+
+        }
+
     }
 
 
@@ -34,10 +49,6 @@ public class LoadSaveItem : MonoBehaviour, IPointerClickHandler
                 image.color = HexToColor("8C8C8C");
                 moreOptions.SetActive(false);
             }
-        }
-        else
-        {
-
         }
     }
 
@@ -77,6 +88,7 @@ public class LoadSaveItem : MonoBehaviour, IPointerClickHandler
     public void DeleteSave()
     {
         deleteUser(Int64.Parse(this.name));
+        Delete(this.name);
         Destroy(this.GetComponentInParent<Transform>().Find(this.name));
         foreach(Transform child in transform.parent)
         {
@@ -92,7 +104,7 @@ public class LoadSaveItem : MonoBehaviour, IPointerClickHandler
     {
         if(name != "")
         {
-            editName(Int64.Parse(this.name), name);
+            editName(long.Parse(this.name), name);
             this.GetComponentsInChildren<TextMeshProUGUI>()[1].text = name;
         }
     }

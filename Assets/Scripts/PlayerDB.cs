@@ -103,7 +103,7 @@ public class PlayerDB : MonoBehaviour
 }
 
     //Gets the time last accessed of a save file
-    private static void insLastAccess(long playerID)
+    public static void insLastAccess(long playerID)
     {
         using (var connection = new SqliteConnection(db))
         {
@@ -119,7 +119,7 @@ public class PlayerDB : MonoBehaviour
         } 
     }
 
-    public void setSceneID(long playerID, int sceneID)
+    public static void setSceneID(long playerID, int sceneID)
     {
         using (var connection = new SqliteConnection(db))
         {
@@ -135,7 +135,7 @@ public class PlayerDB : MonoBehaviour
         insLastAccess(playerID);
     }
 
-    public void setChapterID(long playerID, int chapterID)
+    public static void setChapterID(long playerID, int chapterID)
     {
         using (var connection = new SqliteConnection(db))
         {
@@ -155,7 +155,7 @@ public class PlayerDB : MonoBehaviour
         currentPlayerID = selectedPlayerID;
     }
 
-    public int getChapterID(long playerID)
+    public static int getChapterID(long playerID)
     {
         int retChapter = 0;
         using (var connection = new SqliteConnection(db))
@@ -172,7 +172,7 @@ public class PlayerDB : MonoBehaviour
         return retChapter;
     }
 
-     public int getSceneID(long playerID)
+     public static int getSceneID(long playerID)
     {
         int retScene = 0; 
         using (var connection = new SqliteConnection(db))
