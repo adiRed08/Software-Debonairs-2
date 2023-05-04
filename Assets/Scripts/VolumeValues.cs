@@ -14,6 +14,8 @@ public class VolumeValues : MonoBehaviour
         _slider.onValueChanged.AddListener((v) => {
             _sliderText.text = v.ToString("0%");
         });
+
+        _sliderText.text = _slider.value.ToString("0%");
     }
 
     //public void textUpdate(float value){

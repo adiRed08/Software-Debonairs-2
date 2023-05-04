@@ -12,9 +12,24 @@ public class BRIGHTNESSMANAGER : MonoBehaviour
     public PostProcessLayer layer;
 
     AutoExposure exposure;
+    public static BRIGHTNESSMANAGER instance;
 
     void Start()
     {
+        // Check if an instance already exists
+        if (instance == null)
+        {
+            // If not, set this as the instance and mark it to not be destroyed on scene change
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // If an instance already exists, destroy this one
+            Destroy(gameObject);
+        }
+
+
         brightness.TryGetSettings(out exposure);    
         if(!PlayerPrefs.HasKey("brightness"))
         {
