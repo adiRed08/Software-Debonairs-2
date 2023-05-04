@@ -83,7 +83,7 @@ public class GameSaveLoader : MonoBehaviour
             Debug.Log(getPlayerName(playerID));
             GAMEMYDATA script = theGAMEMYDATAobject.GetComponent<GAMEMYDATA>();
             script.assignData(playerID.ToString());
-            SceneManager.LoadScene("TestGameplay");
+            SceneManager.LoadScene("SceneLoader");
 
         }
 

@@ -17,4 +17,9 @@ public class GAMEMYDATA : MonoBehaviour
     {
         mySave = new();
     }
+
+    public void saveData()
+    {
+        SaveFile.updateSave(mySave.playerID.ToString(), mySave);
+    }
 }

@@ -383,22 +383,23 @@ MonoBehaviour:
   mySave:
     name: 
     scene: 0
+    chapter: 0
     playerID: 0
     items:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
     fileName: 
 --- !u!1 &628408186
 GameObject:
@@ -1668,7 +1669,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 800, y: 220}
+  m_SizeDelta: {x: 742.2917, y: 216.4583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871586093
 MonoBehaviour:
