@@ -17,7 +17,7 @@ public class ScenesManager : MonoBehaviour
     {
         HomeScreenScene,
         NewGameScene,
-        LoadGameScene
+        LoadGameScene,
     }
 
     public void LoadScene(Scene scene)

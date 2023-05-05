@@ -18,11 +18,11 @@ public class SOUNDMANAGER : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            // If an instance already exists, destroy this one
-            Destroy(gameObject);
-        }
+        // else
+        // {
+        //     // If an instance already exists, destroy this one
+        //     Destroy(gameObject);
+        // }
 
         if (!PlayerPrefs.HasKey("musicVolume"))
         {

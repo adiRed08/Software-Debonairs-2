@@ -2855,7 +2855,7 @@ PrefabInstance:
       objectReference: {fileID: 7726336546571010632}
     - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
       propertyPath: possibleItems.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
       propertyPath: possibleItems.Array.data[0]
@@ -2865,6 +2865,22 @@ PrefabInstance:
       propertyPath: possibleItems.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: dde5d173691720f48b9883a795de5b1e, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 142f81e3a8ade4249a104dac219c3702, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c59957ca18f12e04ab67c1e0ad7f1da7, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: b27bd5132f5498b4d8ec5fff000bd9a0, type: 2}
+    - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
+      propertyPath: possibleItems.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 242c2dd5f5cb84d47811f6d9f3b5183c, type: 2}
     - target: {fileID: 6957326282636638475, guid: f68d9ef508f2a084a9278932e97eb04d, type: 3}
       propertyPath: inventorySlots.Array.data[0]
       value: 
@@ -4203,8 +4219,9 @@ MonoBehaviour:
   save:
     name: 
     scene: 0
+    chapter: 0
     playerID: 0
-    items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    items: []
     fileName: 
   inventoryManager: {fileID: 1551858662}
   inventoryItemPrefab: {fileID: 8440631989903164429, guid: fe93845025d93454aa7779d5f62e91d6, type: 3}
