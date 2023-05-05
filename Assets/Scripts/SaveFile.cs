@@ -8,11 +8,15 @@ using TMPro;
 using System;
 using static PlayerDB;
 
+
+
 public class SaveFile : MonoBehaviour
 {
 
     public PlayerDB db;
 
+    public delegate void newSAVEFILE(string msg);
+    public static event newSAVEFILE newSAVEFILEAnnounce;
 
     [SerializeField] public TMP_InputField inputName;
     public TMP_InputField saveFileName;
@@ -35,26 +39,27 @@ public class SaveFile : MonoBehaviour
     public Save newSave = new();
 
     public void createSave()
-        {
-            //collect data from input
-            Save newSave = new();
-            newSave.name = inputName.text;
-            newSave.scene = 1;
-            newSave.chapter = 1;
-            for (int i = 0; i < newSave.items.Length; i++) {
-                newSave.items[i] = "-1_0";
-            }
-            db = GameObject.FindGameObjectWithTag("dbTag").GetComponent<PlayerDB>(); //dbTag is assigned to Database object in Unity
-            db.CreateDB();
-            db.addUser(newSave.name);
-            newSave.playerID = db.getLatestPlayerID();
-            newSave.fileName = newSave.playerID.ToString();
-
-            string json = JsonUtility.ToJson(newSave, true);
-            File.WriteAllText(Application.dataPath + "/Saves/" + newSave.fileName + ".json",json);
-            saveFileName.text = newSave.fileName;
-            
+    {
+        //collect data from input
+        Save newSave = new();
+        newSave.name = inputName.text;
+        newSave.scene = 1;
+        newSave.chapter = 1;
+        for (int i = 0; i < newSave.items.Length; i++) {
+            newSave.items[i] = "-1_0";
         }
+        db = GameObject.FindGameObjectWithTag("dbTag").GetComponent<PlayerDB>(); //dbTag is assigned to Database object in Unity
+        db.CreateDB();
+        db.addUser(newSave.name);
+        newSave.playerID = db.getLatestPlayerID();
+        newSave.chapter = 1;
+        newSave.scene = 1;
+        newSave.fileName = newSave.playerID.ToString();
+
+        string json = JsonUtility.ToJson(newSave, true);
+        File.WriteAllText(Application.dataPath + "/Saves/" + newSave.fileName + ".json",json);
+        newSAVEFILEAnnounce(newSave.playerID.ToString());
+    }
 
     public void editSaveName()
     {

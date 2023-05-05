@@ -14,6 +14,7 @@ public class BrightnessValues : MonoBehaviour
         _slider.onValueChanged.AddListener((b) => {
             _sliderText.text = b.ToString("0%");
         });
+        _sliderText.text = _slider.value.ToString("0%");
     }
     
 }

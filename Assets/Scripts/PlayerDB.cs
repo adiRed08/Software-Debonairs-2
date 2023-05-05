@@ -57,19 +57,23 @@ public class PlayerDB : MonoBehaviour
     {
         using (var connection = new SqliteConnection(db))
         {
+        var unixTimestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
             connection.Open();
             //creates "command" which allows db control
             using(var command = connection.CreateCommand())
             {
-                var unixTimestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
                 setCurrentPlayerID(unixTimestamp);
                 command.CommandText = "INSERT INTO Persons(name, playerID) VALUES (' " + name + " ', " + unixTimestamp.ToString() + ");";
                 command.ExecuteNonQuery();
                 insLastAccess(unixTimestamp);
 
+
             }
             connection.Close();
-        } 
+            setChapterID(unixTimestamp, 1);
+            setSceneID(unixTimestamp, 1);
+        }
+
     }
 
     public static void editName(long playerID, string newName){
