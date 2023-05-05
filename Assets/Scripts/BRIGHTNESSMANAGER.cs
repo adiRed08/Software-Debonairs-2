@@ -23,11 +23,11 @@ public class BRIGHTNESSMANAGER : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        // else
-        // {
-        //     // If an instance already exists, destroy this one
-        //     Destroy(gameObject);
-        // }
+        else if (gameObject.isStatic)
+        {
+            // If an instance already exists, destroy this one
+            Destroy(gameObject);
+        }
 
 
         brightness.TryGetSettings(out exposure);    
