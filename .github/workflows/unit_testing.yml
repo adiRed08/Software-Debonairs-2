@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - Software-Debonairs-2
         testMode:
           - playmode
           - editmode
