@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - Software-Debonairs-2
+          - ./github/workflows/test-results.txt
         testMode:
           - playmode
           - editmode
