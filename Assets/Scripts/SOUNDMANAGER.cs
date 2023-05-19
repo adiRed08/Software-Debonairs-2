@@ -20,7 +20,7 @@ public class SOUNDMANAGER : MonoBehaviour
         }
         else if (gameObject.isStatic)
         {
-            // If an instance already exists, destroy this one
+            // If static, destroy object
             Destroy(gameObject);
         }
 
