@@ -11,6 +11,19 @@ public class SOUNDMANAGER : MonoBehaviour
 
     void Start()
     {
+        if (!PlayerPrefs.HasKey("musicVolume"))
+        {
+            PlayerPrefs.SetFloat("musicVolume", 1);
+            Load();
+        }
+        else
+        {
+            Load();
+        }
+    }
+
+    private void Awake()
+    {
         // Check if an instance already exists
         if (instance == null)
         {
@@ -24,15 +37,6 @@ public class SOUNDMANAGER : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (!PlayerPrefs.HasKey("musicVolume"))
-        {
-            PlayerPrefs.SetFloat("musicVolume", 1);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
     }
 
     public void ChangeVolume()

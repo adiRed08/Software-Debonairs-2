@@ -16,18 +16,6 @@ public class BRIGHTNESSMANAGER : MonoBehaviour
 
     void Start()
     {
-        // Check if an instance already exists
-        if (instance == null)
-        {
-            // If not, set this as the instance and mark it to not be destroyed on scene change
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (gameObject.isStatic)
-        {
-            // If an instance already exists, destroy this one
-            Destroy(gameObject);
-        }
 
 
         brightness.TryGetSettings(out exposure);    
@@ -41,6 +29,22 @@ public class BRIGHTNESSMANAGER : MonoBehaviour
             Load();
         }
         
+    }
+
+    private void Awake()
+    {
+        // Check if an instance already exists
+        if (instance == null)
+        {
+            // If not, set this as the instance and mark it to not be destroyed on scene change
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (gameObject.isStatic)
+        {
+            // If an instance already exists, destroy this one
+            Destroy(gameObject);
+        }
     }
 
     public void AdjustBrightness(float value)
