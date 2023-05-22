@@ -18,6 +18,7 @@ public class ScenesManager : MonoBehaviour
         HomeScreenScene,
         NewGameScene,
         LoadGameScene,
+        BattleStageScene,
     }
 
     public void LoadScene(Scene scene)
@@ -42,8 +43,13 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(Scene.HomeScreenScene.ToString());
-        
+        SceneManager.LoadScene(Scene.HomeScreenScene.ToString());    
     }
+
+    public void LoadBattleScene()
+    {
+        SceneManager.LoadScene(Scene.BattleStageScene.ToString());
+    }
+
 
 }
