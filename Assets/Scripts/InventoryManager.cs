@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public Item[] possibleItems;
+    public TextMeshProUGUI itemNameText;
+    public TextMeshProUGUI itemDescriptionText;
 
     //adds item to an empty slot in the inventory
 
@@ -52,9 +57,25 @@ public class InventoryManager : MonoBehaviour
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+
+        EventTrigger eventTrigger = newItemGo.AddComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerClick;
+        entry.callback.AddListener((eventData) => OnItemClicked(inventoryItem));
+        eventTrigger.triggers.Add(entry);
     } 
 
     public void saveInventory(){
         inventorySave.SaveInventory(inventorySlots);
     }
+
+    void OnItemClicked(InventoryItem clickedItem)
+    {
+    // Handle the item click event here
+   //Debug.Log("Clicked item: " + clickedItem.item.name + clickedItem.item.desc);
+    itemNameText.text = clickedItem.item.name;
+    itemDescriptionText.text = clickedItem.item.desc;
+    }
+
+    
 }
