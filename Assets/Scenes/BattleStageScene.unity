@@ -3870,7 +3870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0e3acc46734464f83ce19b3bea9c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {fileID: 11400000, guid: 61a9bccc7c82a3d4b84fb9ab88f2eabc, type: 2}
+  move: {fileID: 11400000, guid: 09c1e43824ac020478654fde6d8245d0, type: 2}
   battleDialogue: {fileID: 1347001498}
 --- !u!114 &1988118452
 MonoBehaviour:
