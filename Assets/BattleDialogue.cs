@@ -69,7 +69,7 @@ public class BattleDialogue : MonoBehaviour
 
     public void ClickButtonText()
     {
-        toDisplay.text = "Click to continue";
+        toDisplay.text = opponent.name + " took " + reactions.damage + " damage";
     }
 
     public void Update()
