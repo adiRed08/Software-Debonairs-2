@@ -477,7 +477,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230893414}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0632be31e712c924ca8cd03e9e02d125, type: 3}
   m_Name: 
@@ -1262,7 +1262,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61a9bccc7c82a3d4b84fb9ab88f2eabc, type: 2}
   - {fileID: 11400000, guid: 8d75405f6ae8f0c439795b7b9e4d5b42, type: 2}
   reactions: {fileID: 1049418098}
-  otherDialogues: {fileID: 1529566676}
   isGameDialogue: 0
   isEndDialogue: 1
   isOpponentDialogue: 0
@@ -1287,7 +1286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is just a test
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f21cf8858ae6399408c8346abfe18832, type: 2}
   m_sharedMaterial: {fileID: -1027023608233491840, guid: f21cf8858ae6399408c8346abfe18832, type: 2}
@@ -2825,7 +2824,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61a9bccc7c82a3d4b84fb9ab88f2eabc, type: 2}
   - {fileID: 11400000, guid: 8d75405f6ae8f0c439795b7b9e4d5b42, type: 2}
   reactions: {fileID: 1049418098}
-  otherDialogues: {fileID: 0}
   isGameDialogue: 0
   isEndDialogue: 0
   isOpponentDialogue: 0
@@ -3317,7 +3315,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61a9bccc7c82a3d4b84fb9ab88f2eabc, type: 2}
   - {fileID: 11400000, guid: 8d75405f6ae8f0c439795b7b9e4d5b42, type: 2}
   reactions: {fileID: 1049418098}
-  otherDialogues: {fileID: 0}
   isGameDialogue: 1
   isEndDialogue: 0
   isOpponentDialogue: 0
@@ -3977,7 +3974,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61a9bccc7c82a3d4b84fb9ab88f2eabc, type: 2}
   - {fileID: 11400000, guid: 8d75405f6ae8f0c439795b7b9e4d5b42, type: 2}
   reactions: {fileID: 1049418098}
-  otherDialogues: {fileID: 0}
   isGameDialogue: 0
   isEndDialogue: 0
   isOpponentDialogue: 1
