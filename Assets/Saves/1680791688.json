@@ -1,22 +1,24 @@
 {
     "name": "Matt",
     "scene": 1,
+    "chapter": 0,
     "playerID": 1680791688,
     "items": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
     ],
+    "storyProgress": "{\"flows\":{\"DEFAULT_FLOW\":{\"callstack\":{\"threads\":[{\"callstack\":[{\"cPath\":\"0\",\"idx\":372,\"exp\":false,\"type\":0}],\"threadIndex\":0,\"previousContentObject\":\"0.371\"}],\"threadCounter\":0},\"outputStream\":[{\"#\":\"background:locker\"},{\"#\":\"thoughts\"},\"^This is where I ran into that- well, calling him unfriendly would be an understatement. Now...\",\"\\n\"],\"currentChoices\":[]}},\"currentFlowName\":\"DEFAULT_FLOW\",\"variablesState\":{},\"evalStack\":[],\"visitCounts\":{\"\":1},\"turnIndices\":{},\"turnIdx\":-1,\"storySeed\":18,\"previousRandom\":0,\"inkSaveVersion\":9,\"inkFormatVersion\":20}",
     "fileName": "1680791688"
 }

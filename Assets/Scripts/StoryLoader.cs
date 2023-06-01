@@ -46,20 +46,29 @@ public class StoryLoader : MonoBehaviour
         }
         catch
         {
-            Player = "AmongUs";
+            Player = "You";
         }
         story = new(inkJSON.text);
         dialogueChoices.SetActive(false);
-        try
+        story.variablesState["Player"] = Player;
+        this.LoadProgress();
+        this.nextStoryLine();
+    }
+
+    public void LoadProgress()
+    {
+        string savedProgress = SaveHolder.mySave.storyProgress;
+        if (!string.IsNullOrEmpty(savedProgress))
         {
-            story.variablesState[Player] = Player;
-        }
-        catch
-        {
+            story.state.LoadJson(savedProgress);
 
         }
-        story.ResetState();
-        this.nextStoryLine();
+    }
+
+    public void SaveProgress()
+    {
+        SaveHolder.mySave.storyProgress = story.state.ToJson();
+        SaveHolder.saveData();
     }
 
     private void OnEnable()
@@ -136,6 +145,7 @@ public class StoryLoader : MonoBehaviour
 
     public bool nextStoryLine()
     {
+        this.SaveProgress();
         List<string> listChoices = new();
         if (story.canContinue)
         {
@@ -169,4 +179,5 @@ public class StoryLoader : MonoBehaviour
             return false;
         }
     }
+
 }

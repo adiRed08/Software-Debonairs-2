@@ -19,5 +19,6 @@
         "0",
         "0"
     ],
+    "storyProgress": "{\"flows\":{\"DEFAULT_FLOW\":{\"callstack\":{\"threads\":[{\"callstack\":[{\"cPath\":\"0\",\"idx\":7,\"exp\":false,\"type\":0}],\"threadIndex\":0,\"previousContentObject\":\"0.6\"}],\"threadCounter\":0},\"outputStream\":[{\"#\":\"background:grounds\"},{\"#\":\"character:Player\"},\"^Woah! This place is huge! The Academy does indeed look bigger from what I expected to see from the internet.\",\"\\n\"],\"currentChoices\":[]}},\"currentFlowName\":\"DEFAULT_FLOW\",\"variablesState\":{},\"evalStack\":[],\"visitCounts\":{\"\":1},\"turnIndices\":{},\"turnIdx\":-1,\"storySeed\":42,\"previousRandom\":0,\"inkSaveVersion\":9,\"inkFormatVersion\":20}",
     "fileName": "1680791673"
 }

@@ -112,8 +112,7 @@ Ha ha! I can tell, because the room that's you're looking for is that way.
 
 The professor pointer behind {Player}, indicating that he was going on the opposite direction.
 
-#background:classroom
-#background:classroom
+
 #character:Player
 Ohh... I feel really stupid right now.
 
@@ -143,12 +142,12 @@ Who knows?
 #character:Player
 S-Sir, please don't scare me like that. 
 
-Screen fades to black and inside the classroom
-
+// Screen fades to black and inside the classroom
+#background:classroom
 Students murmuring in the background
 
 #character:Professor Harry
- Here we are. Take any seat. Class will begin 
+Here we are. Take any seat. Class will begin 
 
 #thoughts
 What a nice guy. We got along for a moment but I just hope I won't get to see him as one of my subject teachers.
@@ -244,15 +243,18 @@ Alright, so let's move on to a different topic.
 #thoughts
 ... That baffled me for a bit but at least I got the important ideas from his video game analogy. I wonder what those valuable items look like.
 
-Time skip
+#msg
+A few minutes later
+
+#msg
 Class bell rings
+
+#sound:bell.mp3
 
 #character:Professor Harry
 That concludes today’s meeting. I will see you all in our next encounter.
 
 #background:locker2
-
-transition to HALLWAY with fade to black
 Students murmuring
 
 #thoughts
@@ -317,10 +319,7 @@ H-hold it now! Sorry {Player}, but I have to go. It was nice seeing you!
 #thoughts
 Weird. I didn’t know if it’s just me but what he said just now sounded ominous. I’ll just get back to exploring then. 
 
-#locker
-BG IMAGE: School Corridor
-
-(Dialogue automatically plays when player goes next)
+#background:locker
 
 #thoughts
 This is where I ran into that- well, calling him unfriendly would be an understatement. Now...
@@ -432,7 +431,7 @@ Take note that in the middle of the dialogue, these dialogue options may pop up 
 #character:Player
 You again. You just can’t stand being apart from me can you?
     
-Christoffer appears onto the screen
+// Christoffer appears onto the screen
 
 #character:Christoffer
 Ah so you remember me. I assume that you also remember owing us something.
@@ -483,7 +482,7 @@ Yeah, just like how it was none of your business poking your nose into other peo
 PFFT–
     
 #character:Christoffer
-glares //i dunno how to turn this into an expression or something similar
+\*glares* //i dunno how to turn this into an expression or something similar
     
 #character:Player
 Shutting up now.
@@ -507,9 +506,11 @@ Yeah, I’m assuming you don’t know what that means so let me show you the rop
     
 #thoughts
 And here I thought it was hand to hand combat. I was wrong.
+
+#do:battle
     
-(Game will orient the player about the mechanics of battling)
-(Note: The dialogue here will be added here later on.)
+// (Game will orient the player about the mechanics of battling)
+// (Note: The dialogue here will be added here later on.)
 
 After the battle finishes.
     
@@ -537,7 +538,7 @@ Still. Thank you. At least I know how to handle them if we ever crossed paths ag
 #character:Steve
 I also got what I wanted anyways so it’s no trouble at all. 
     
-Scenario 1: If went to canteen first
+// Scenario 1: If went to canteen first
     
 #character:Steve
 Actually we saw each other in the canteen earlier. It just so happened that I was on my way to the next class, which is through this door. 
