@@ -9,17 +9,13 @@ public class BattleDialogue : MonoBehaviour
     public Move[] moves;
     private string dialogue;
     public OpponentReactions reactions;
-    public GameObject otherDialogues;
     public bool isGameDialogue;
-    public bool isEndDialogue;
-    public bool isOpponentDialogue;
     private static int lastPrompt;
     private int prompt;
 
-
     public TMP_Text toDisplay;
 
-    void Start()
+   void Start()
     {
         if (isGameDialogue)
         {
@@ -30,10 +26,6 @@ public class BattleDialogue : MonoBehaviour
             }
             dialogue = opponent.name + " has started a confrontation.";
             toDisplay.text = dialogue;
-        }
-        else if (isEndDialogue)
-        {
-            toDisplay.text = "";
         }
     }
 
@@ -72,19 +64,5 @@ public class BattleDialogue : MonoBehaviour
     public void ClickButtonText()
     {
         toDisplay.text = "Click to continue";
-    }
-
-    void Update()
-    {
-        if (reactions.health.value == 0 && isEndDialogue)
-        {
-            otherDialogues.SetActive(false);
-            this.toDisplay.text = "this is the end.";
-            this.gameObject.SetActive(true);
-        }
-        else if (reactions.health.value == 0 && isOpponentDialogue)
-        {
-            this.toDisplay.text = opponent.endRemark;
-        }
     }
 }
