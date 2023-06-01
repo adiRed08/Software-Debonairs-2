@@ -19,7 +19,7 @@ public class StoryLoader : MonoBehaviour
     public DialogueLoader dialogueOptionManager;
     public GameObject dialogueCanvas;
     //characters
-    public GameObject christofferSprite;
+    public GameObject steveSprite;
     public GameObject rivalSprite;
     public GameObject senpaiSprite;
     public GameObject prof_henrySprite;
@@ -124,6 +124,10 @@ public class StoryLoader : MonoBehaviour
             {
                 return "*player thoughts*";
             }
+            else if (tag.StartsWith("battletrigger"))
+            {
+
+            }
         }
         return null;
     }
@@ -149,9 +153,9 @@ public class StoryLoader : MonoBehaviour
             // Display the speaker and line in your game
             Debug.Log(speaker);
             stateBox.text = speaker;
-            rivalSprite.SetActive(speaker == "Rival");
+            steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Guy");
             prof_henrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry");
-            christofferSprite.SetActive(speaker == "Christoffer");
+            rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival");
             senpaiSprite.SetActive(speaker == "Justine");
             return true;
             
