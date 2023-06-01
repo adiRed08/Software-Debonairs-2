@@ -9,6 +9,7 @@ public class OpponentReactions : MonoBehaviour
     public BattleDialogue battleDialogue;
     public HealthBarMechanics healthBar;
     public int damage;
+    public AudioQueue audio;
 
     /*Reactions are only for the benefit of the demo and might be added later on if we decide
     to pursue this project further*/
@@ -30,11 +31,13 @@ public class OpponentReactions : MonoBehaviour
                 {
                     set_toDisplay("Ngrrgh, we'll just see about that.");
                     damage = 15;
+                    audio.playAudioClip();
                 }
                 else if (opponentMove == "Oh, you got into this school? Must have been a lucky day for you.")
                 {
                     set_toDisplay("...You won't make it, just wait and see.");
                     damage = 15;
+                    audio.playAudioClip();
                 }
                 //Semi-effective
                 else if (opponentMove == "I can't imagine being as unpopular as you")
@@ -61,17 +64,20 @@ public class OpponentReactions : MonoBehaviour
                 {
                     set_toDisplay("S-shut up. You just wish you had these things.");
                     damage = 15;
+                    audio.playAudioClip();
                 }
                 else if (opponentMove == "I can't imagine being as unpopular as you")
                 {
                     set_toDisplay("Ngrgh, why you little b-!");
                     damage = 15;
+                    audio.playAudioClip();
                 }
                 //Semi effective
                 else if (opponentMove == "Hey, you wanna hear a joke, buddy? You! *laughs*")
                 {
                     set_toDisplay("*in a sarcastic tone* HAHAHAHA good one!");
                     damage = 10;
+
                 }
                 else if (opponentMove == "I'm gonna beat you up so bad, no one's gonna recognize you.")
                 {
@@ -101,11 +107,13 @@ public class OpponentReactions : MonoBehaviour
                 {
                     set_toDisplay("Grrr... why you little!");
                     damage = 15;
+                    audio.playAudioClip();
                 }
                 else if (opponentMove == "*Stares at you threateningly*" || opponentMove == "*Laughs at you*")
                 {
                     set_toDisplay("You mock me with that statement of yours!");
                     damage = 15;
+                    audio.playAudioClip();
                 }
                 //Semi-effective
                 else if (opponentMove == "Hey, you wanna hear a joke, buddy? You! *laughs*" || opponentMove == "Oh, you got into this school? Must have been a lucky day for you.")
@@ -128,6 +136,7 @@ public class OpponentReactions : MonoBehaviour
                 {
                     set_toDisplay("H-hey! Look at me when I'm talking to you, you idiot!");
                     damage = 15;
+                    audio.playAudioClip();
                 }
                 //Semi-effective 0 7 
                 else if (opponentMove == "Hey, you wanna hear a joke, buddy? You! *laughs*" || opponentMove == "Oh, you got into this school? Must have been a lucky day for you."
