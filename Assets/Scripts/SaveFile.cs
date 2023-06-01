@@ -21,11 +21,16 @@ public class SaveFile : MonoBehaviour
     [SerializeField] public TMP_InputField inputName;
     public TMP_InputField saveFileName;
 
+    public bool isMale;
+
+
+
     [System.Serializable]
 
     public class Save
     {
         public string name;
+        public bool male;
         public int scene;
         public int chapter;
         public long playerID;
@@ -44,6 +49,7 @@ public class SaveFile : MonoBehaviour
         Save newSave = new();
         newSave.name = inputName.text;
         newSave.scene = 1;
+        newSave.male = isMale;
         newSave.chapter = 1;
         for (int i = 0; i < newSave.items.Length; i++) {
             newSave.items[i] = "-1_0";

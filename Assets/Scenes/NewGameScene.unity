@@ -950,6 +950,7 @@ RectTransform:
   - {fileID: 912090570}
   - {fileID: 1744876528}
   - {fileID: 46699163}
+  - {fileID: 1395104827}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -975,6 +976,7 @@ MonoBehaviour:
   saveFileName: {fileID: 0}
   currentPlayer:
     name: 
+    male: 0
     scene: 0
     chapter: 0
     playerID: 0
@@ -996,6 +998,7 @@ MonoBehaviour:
     fileName: 
   newSave:
     name: 
+    male: 0
     scene: 0
     chapter: 0
     playerID: 0
@@ -2120,6 +2123,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312492084}
   m_CullTransparentMesh: 1
+--- !u!1 &1395104826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395104827}
+  - component: {fileID: 1395104828}
+  m_Layer: 0
+  m_Name: GenderButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395104827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395104826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 285.96323, y: -45.538494, z: -0.3119899}
+  m_LocalScale: {x: 0.41666666, y: 0.41666666, z: 0.41666666}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 854161178}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395104828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395104826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba63e4c92d9f0bd4c8e968fa60860d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FemaleButtonImg: {fileID: 1744876527}
+  MaleButtonImg: {fileID: 46699162}
 --- !u!1 &1404710289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySave:
     name: 
+    male: 0
     scene: 0
     chapter: 0
     playerID: 0
