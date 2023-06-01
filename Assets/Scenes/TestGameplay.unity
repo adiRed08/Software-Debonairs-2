@@ -3538,7 +3538,7 @@ MonoBehaviour:
   dialogueChoices: {fileID: 417867827}
   dialogueOptionManager: {fileID: 2025220684}
   dialogueCanvas: {fileID: 1136949932}
-  christofferSprite: {fileID: 189550446}
+  steveSprite: {fileID: 189550446}
   rivalSprite: {fileID: 1829452316}
   senpaiSprite: {fileID: 559420826}
   prof_henrySprite: {fileID: 1211165408}
@@ -4257,6 +4257,7 @@ MonoBehaviour:
   data: {fileID: 0}
   save:
     name: 
+    male: 0
     scene: 0
     chapter: 0
     playerID: 0
