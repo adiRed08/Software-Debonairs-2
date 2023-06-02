@@ -1614,6 +1614,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013399171}
   m_CullTransparentMesh: 1
+--- !u!1 &1026395573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026395575}
+  - component: {fileID: 1026395574}
+  m_Layer: 0
+  m_Name: GameSaveLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1026395574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026395573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afbacbbf1e310645abb1cf87369bb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toLoad: 0
+  scrollViewContent: {fileID: 0}
+  prefab: {fileID: 6506823566339725062, guid: 87b2818d488c4b24f96ff1a7379056f6, type: 3}
+  playerID: 0
+  Next: {fileID: 0}
+  theGAMEMYDATAobject: {fileID: 0}
+--- !u!4 &1026395575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026395573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 343.8563, y: 73.99108, z: -4.2757206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1060521138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3538,6 +3588,7 @@ MonoBehaviour:
   dialogueChoices: {fileID: 417867827}
   dialogueOptionManager: {fileID: 2025220684}
   dialogueCanvas: {fileID: 1136949932}
+  sceneLoader: {fileID: 1026395574}
   steveSprite: {fileID: 189550446}
   rivalSprite: {fileID: 1829452316}
   senpaiSprite: {fileID: 559420826}
