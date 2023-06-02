@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661754d5cb2a6c7469a2806562f035f5, type: 3}
+  m_Name: Does that matter
+  m_EditorClassIdentifier: 
+  moveName: Does that matter?
+  timesCalled: 0
+  dialogue1: So what? You really think that matters?
+  dialogue2: It must be pretty sad to have to worry about that.

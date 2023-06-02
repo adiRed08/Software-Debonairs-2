@@ -88,4 +88,9 @@ public class GameSaveLoader : MonoBehaviour
         }
 
     }
+
+    public void loadBattle()
+    {
+        SceneManager.LoadScene("BattleStageScene");
+    }
 }
