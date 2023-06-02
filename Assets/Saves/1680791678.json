@@ -19,5 +19,6 @@
         "",
         ""
     ],
+    "storyProgress": "{\"flows\":{\"DEFAULT_FLOW\":{\"callstack\":{\"threads\":[{\"callstack\":[{\"cPath\":\"TBC\",\"idx\":7,\"exp\":false,\"type\":0}],\"threadIndex\":0,\"previousContentObject\":\"TBC.6\"}],\"threadCounter\":2},\"outputStream\":[\"^Hugo\",\"^'s journey of resiliency just begun. Thank you for playing! \",{\"#\":\"background:lib\"},\"\\n\"],\"currentChoices\":[]}},\"currentFlowName\":\"DEFAULT_FLOW\",\"variablesState\":{\"Player\":\"^Hugo\"},\"evalStack\":[],\"visitCounts\":{\"\":13,\"0.c-1\":1,\"0.g-0\":1,\"TBC\":12},\"turnIndices\":{},\"turnIdx\":12,\"storySeed\":63,\"previousRandom\":0,\"inkSaveVersion\":9,\"inkFormatVersion\":20}",
     "fileName": "1680791678"
 }

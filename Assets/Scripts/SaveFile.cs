@@ -35,6 +35,7 @@ public class SaveFile : MonoBehaviour
         public int chapter;
         public long playerID;
         public string[] items = new string[14];
+        public string storyProgress;
         // public InventoryItem[] items = new InventoryItem[14];
         public string fileName;
     }
