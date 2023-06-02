@@ -508,9 +508,11 @@ Yeah, I’m assuming you don’t know what that means so let me show you the rop
 #thoughts
 And here I thought it was hand to hand combat. I was wrong.
     
+
 Throughout the game you will encounter multiple confrontations. 
+
 You will be presented with a prompt which you must choose how to respond, which is either through confronting or using a consumable item if needed. 
-#batlletrigger
+#battletrigger
 
 #character:Christoffer
 D-Damn you both, you guys aren’t going to get away with this. Boys, let’s bail.

@@ -18,6 +18,7 @@ public class StoryLoader : MonoBehaviour
     public GameObject dialogueChoices;
     public DialogueLoader dialogueOptionManager;
     public GameObject dialogueCanvas;
+    public GameSaveLoader sceneLoader;
     //characters
     public GameObject steveSprite;
     public GameObject rivalSprite;
@@ -101,7 +102,12 @@ public class StoryLoader : MonoBehaviour
     {
         foreach (string tag in tags)
         {
-            if (tag.StartsWith("background:"))
+            //Debug.Log(tag);
+            if (tag.StartsWith("battletrigger"))
+            {
+                sceneLoader.loadBattle();
+            }
+            else if (tag.StartsWith("background:"))
             {
                 Debug.Log(tag.Substring("character:".Length));
                 locker.SetActive(":locker"==tag.Substring("character:".Length));
@@ -123,10 +129,6 @@ public class StoryLoader : MonoBehaviour
             else if (tag.StartsWith("thoughts"))
             {
                 return "*player thoughts*";
-            }
-            else if (tag.StartsWith("battletrigger"))
-            {
-
             }
         }
         return null;
