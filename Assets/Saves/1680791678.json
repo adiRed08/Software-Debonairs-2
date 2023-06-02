@@ -19,6 +19,6 @@
         "",
         ""
     ],
-    "storyProgress": "{\"flows\":{\"DEFAULT_FLOW\":{\"callstack\":{\"threads\":[{\"callstack\":[{\"exp\":false,\"type\":0}],\"threadIndex\":0}],\"threadCounter\":2},\"outputStream\":[{\"#\":\"character:Player\"},{\"#\":\"background:lib\"},\"^Yeah, we have 5 mins left, we should go. I’ll be right behind you.\",\"\\n\"],\"currentChoices\":[]}},\"currentFlowName\":\"DEFAULT_FLOW\",\"variablesState\":{\"Player\":\"^Hugo\"},\"evalStack\":[],\"visitCounts\":{\"\":1,\"0.c-1\":1,\"0.g-0\":1},\"turnIndices\":{},\"turnIdx\":0,\"storySeed\":63,\"previousRandom\":0,\"inkSaveVersion\":9,\"inkFormatVersion\":20}",
+    "storyProgress": "{\"flows\":{\"DEFAULT_FLOW\":{\"callstack\":{\"threads\":[{\"callstack\":[{\"cPath\":\"TBC\",\"idx\":7,\"exp\":false,\"type\":0}],\"threadIndex\":0,\"previousContentObject\":\"TBC.6\"}],\"threadCounter\":2},\"outputStream\":[\"^Hugo\",\"^'s journey of resiliency just begun. Thank you for playing! \",{\"#\":\"background:lib\"},\"\\n\"],\"currentChoices\":[]}},\"currentFlowName\":\"DEFAULT_FLOW\",\"variablesState\":{\"Player\":\"^Hugo\"},\"evalStack\":[],\"visitCounts\":{\"\":13,\"0.c-1\":1,\"0.g-0\":1,\"TBC\":12},\"turnIndices\":{},\"turnIdx\":12,\"storySeed\":63,\"previousRandom\":0,\"inkSaveVersion\":9,\"inkFormatVersion\":20}",
     "fileName": "1680791678"
 }

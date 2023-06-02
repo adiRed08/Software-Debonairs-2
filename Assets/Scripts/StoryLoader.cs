@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static DialogueLoader;
 using static DialogueItem;
+using UnityEngine.SceneManagement;
 
 public class StoryLoader : MonoBehaviour
 { 
@@ -34,6 +35,7 @@ public class StoryLoader : MonoBehaviour
     //SaveData
     public GameObject myGameObject;
     public GAMEMYDATA SaveHolder;
+    public bool done;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,10 +63,6 @@ public class StoryLoader : MonoBehaviour
         if (!string.IsNullOrEmpty(savedProgress))
         {
             story.state.LoadJson(savedProgress);
-        }
-        else
-        {
-            story.ResetState();
         }
     }
 
@@ -149,6 +147,12 @@ public class StoryLoader : MonoBehaviour
     public bool nextStoryLine()
     {
         this.SaveProgress();
+        if (done)
+        {
+            SceneManager.LoadScene(0);
+            Destroy(myGameObject);
+            return false;
+        }
         List<string> listChoices = new();
         if (story.canContinue)
         {
@@ -167,10 +171,30 @@ public class StoryLoader : MonoBehaviour
             christofferSprite.SetActive(speaker == "Christoffer");
             senpaiSprite.SetActive(speaker == "Justine");
             return true;
-            
         }
         else
         {
+            if (story.currentChoices.Count == 0)
+            {
+                story.ChoosePathString("TBC");
+                this.SaveProgress();
+                dialogueChoices.SetActive(false);
+                dialogueCanvas.SetActive(true);
+
+                dialogueBox.text = story.Continue();
+                // Get the current speaker variable from the VariablesState dictionary
+                string speaker = GetState(story.currentTags);
+
+                // Display the speaker and line in your game
+                Debug.Log(speaker);
+                stateBox.text = speaker;
+                rivalSprite.SetActive(speaker == "Rival");
+                prof_henrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry");
+                christofferSprite.SetActive(speaker == "Christoffer");
+                senpaiSprite.SetActive(speaker == "Justine");
+                done = true;
+                return false;
+            }
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
                 listChoices.Add(story.currentChoices[i].text);

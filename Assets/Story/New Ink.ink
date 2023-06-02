@@ -756,4 +756,9 @@ You could say that. I might tell you the full story in the future, but right now
 #background:lib
 Yeah, we have 5 mins left, we should go. I’ll be right behind you.
 
+=== TBC ===
+{Player}'s journey of resiliency just begun. Thank you for playing! #background:lib
+#END
+
+
 -> END
