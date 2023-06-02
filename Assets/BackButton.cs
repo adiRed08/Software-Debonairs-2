@@ -19,8 +19,8 @@ public class BackButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 
     public void GoBack()
     {
-        GameObject myGameObject = GameObject.Find("GAMEMYDATA");
-        Destroy(myGameObject);
+        // GameObject myGameObject = GameObject.Find("GAMEMYDATA");
+        // Destroy(myGameObject);
         ScenesManager.Instance.LoadMainMenu();
     }
 

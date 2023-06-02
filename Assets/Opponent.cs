@@ -10,5 +10,5 @@ public class Opponent : ScriptableObject
     public Sprite image;
     public string name;
     public string[] statements;
-    public Slider health;
+    public string endRemark;
 }

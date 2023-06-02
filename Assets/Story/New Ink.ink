@@ -516,7 +516,7 @@ Take note that in the middle of the dialogue, these dialogue options may pop up 
         Shush! #background:caf
     
     #background:caf
-    #character:???z
+    #character:Mysterious Guy
     -- I’d like one of those too, please. #background:caf
     
     #background:caf
@@ -524,7 +524,7 @@ Take note that in the middle of the dialogue, these dialogue options may pop up 
     !? #background:caf
     
     #background:caf
-    #character:???
+    #character:Mysterious Guy
     Thank you very much.  #background:caf
     
     #background:caf
@@ -670,15 +670,13 @@ Yeah, I’m assuming you don’t know what that means so let me show you the rop
 #background:lib
 #thoughts
 And here I thought it was hand to hand combat. I was wrong.
-
-#background:lib
-#do:battle
-// (Game will orient the player about the mechanics of battling)
-// (Note: The dialogue here will be added here later on.)
-#background:lib
-After the battle finishes.
     
-#background:lib
+
+Throughout the game you will encounter multiple confrontations. 
+
+You will be presented with a prompt which you must choose how to respond, which is either through confronting or using a consumable item if needed. 
+#battletrigger
+
 #character:Christoffer
 D-Damn you both, you guys aren’t going to get away with this. Boys, let’s bail.
 

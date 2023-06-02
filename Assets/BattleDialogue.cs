@@ -10,6 +10,8 @@ public class BattleDialogue : MonoBehaviour
     private string dialogue;
     public OpponentReactions reactions;
     public bool isGameDialogue;
+    public bool isEndDialogue;
+    public bool isOpponentDialogue;
     private static int lastPrompt;
     private int prompt;
 
@@ -27,6 +29,10 @@ public class BattleDialogue : MonoBehaviour
             dialogue = opponent.name + " has started a confrontation.";
             toDisplay.text = dialogue;
         }
+        //else if (isEndDialogue)
+        //{
+        //    this.gameObject.SetActive(true);
+        //}
     }
 
     public void randomPrompt()
@@ -63,6 +69,21 @@ public class BattleDialogue : MonoBehaviour
 
     public void ClickButtonText()
     {
-        toDisplay.text = "Click to continue";
+        toDisplay.text = opponent.name + " took " + reactions.damage + " damage";
+    }
+
+    public void Update()
+    {
+        if (isEndDialogue && reactions.healthBar.health.value == 0) {
+            toDisplay.text = opponent.name + " has been defeated.";
+        }
+        else if (isOpponentDialogue && reactions.healthBar.health.value == 0)
+        {
+            toDisplay.text = opponent.endRemark;
+        }
+        else if (isGameDialogue && reactions.healthBar.health.value == 0)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }
