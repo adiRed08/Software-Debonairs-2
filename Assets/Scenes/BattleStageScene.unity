@@ -1393,6 +1393,7 @@ MonoBehaviour:
   isGameDialogue: 0
   isEndDialogue: 1
   isOpponentDialogue: 0
+  startImage: {fileID: 0}
   toDisplay: {fileID: 815898622}
 --- !u!114 &815898622
 MonoBehaviour:
@@ -2255,9 +2256,29 @@ PrefabInstance:
       value: Opponent
       objectReference: {fileID: 0}
     - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: hp25
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cbc90a8872fd8d44baffaf40f4d0852, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: hp50
+      value: 
+      objectReference: {fileID: 21300000, guid: f49f6e2faec8d1941a863ca6ac196fbb, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: hp75
+      value: 
+      objectReference: {fileID: 21300000, guid: fa002eff69b8ce04491d2e00011c5a4a, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
       propertyPath: audio
       value: 
       objectReference: {fileID: 1114420030}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: hp100
+      value: 
+      objectReference: {fileID: 21300000, guid: 020efcff3012139429ea230e1cbd71bf, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1049418099}
     - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
       propertyPath: health
       value: 
@@ -2978,6 +2999,7 @@ MonoBehaviour:
   isGameDialogue: 0
   isEndDialogue: 0
   isOpponentDialogue: 0
+  startImage: {fileID: 0}
   toDisplay: {fileID: 1347001499}
 --- !u!114 &1347001499
 MonoBehaviour:
@@ -3469,6 +3491,7 @@ MonoBehaviour:
   isGameDialogue: 1
   isEndDialogue: 0
   isOpponentDialogue: 0
+  startImage: {fileID: 21300000, guid: 020efcff3012139429ea230e1cbd71bf, type: 3}
   toDisplay: {fileID: 1529566680}
 --- !u!114 &1529566680
 MonoBehaviour:
@@ -4128,6 +4151,7 @@ MonoBehaviour:
   isGameDialogue: 0
   isEndDialogue: 0
   isOpponentDialogue: 1
+  startImage: {fileID: 21300000, guid: 020efcff3012139429ea230e1cbd71bf, type: 3}
   toDisplay: {fileID: 1758113510}
 --- !u!114 &1758113510
 MonoBehaviour:

@@ -14,6 +14,7 @@ public class BattleDialogue : MonoBehaviour
     public bool isOpponentDialogue;
     private static int lastPrompt;
     private int prompt;
+    public Sprite startImage;
 
     public TMP_Text toDisplay;
 
@@ -21,6 +22,7 @@ public class BattleDialogue : MonoBehaviour
     {
         if (isGameDialogue)
         {
+            opponent.image=startImage;
             lastPrompt = -1;
             foreach (Move move in moves)
             {

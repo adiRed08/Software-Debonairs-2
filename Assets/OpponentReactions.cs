@@ -10,6 +10,11 @@ public class OpponentReactions : MonoBehaviour
     public HealthBarMechanics healthBar;
     public int damage;
     public AudioQueue audio;
+    public Sprite hp25;
+    public Sprite hp50;
+    public Sprite hp75;
+    public Sprite hp100;
+    public Image image;
 
     /*Reactions are only for the benefit of the demo and might be added later on if we decide
     to pursue this project further*/
@@ -171,11 +176,30 @@ public class OpponentReactions : MonoBehaviour
             healthBar.health.value = 0;
         }    
         healthBar.valueText.text = healthBar.health.value.ToString() + "/" + healthBar.health.maxValue.ToString();
+        changeFace();
     }
 
     public void set_toDisplay(string response)
     {
         battleDialogue.toDisplay.text = response;
+    }
+    public void changeFace()
+    {
+        Debug.Log(healthBar.health.value);
+        if (healthBar.health.value <= 75 && healthBar.health.value > 50){
+            battleDialogue.opponent.image = hp75;
+            image.sprite = hp75;
+        }
+        else if (healthBar.health.value <= 50 && healthBar.health.value > 25)
+        {
+            battleDialogue.opponent.image = hp50;
+            image.sprite = hp50;
+        }
+        else if (healthBar.health.value <= 25)
+        {
+            battleDialogue.opponent.image = hp25;
+            image.sprite = hp25;
+        }
     }
 }
         //        if (playerMove.moveName == "I'm here to do the work")
