@@ -21,6 +21,12 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         inventorySave.LoadInventory(inventorySlots,possibleItems);
+        addItem(possibleItems[0]);
+        addItem(possibleItems[1]);
+        addItem(possibleItems[2]);
+        addItem(possibleItems[3]);
+        addItem(possibleItems[4]);
+        addItem(possibleItems[5]);
     }
     
     public bool addItem(Item item)
