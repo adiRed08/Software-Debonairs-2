@@ -18,8 +18,9 @@ public class StoryLoader : MonoBehaviour
     public GameObject dialogueChoices;
     public DialogueLoader dialogueOptionManager;
     public GameObject dialogueCanvas;
+    public GameSaveLoader sceneLoader;
     //characters
-    public GameObject christofferSprite;
+    public GameObject steveSprite;
     public GameObject rivalSprite;
     public GameObject senpaiSprite;
     public GameObject prof_henrySprite;
@@ -101,7 +102,12 @@ public class StoryLoader : MonoBehaviour
     {
         foreach (string tag in tags)
         {
-            if (tag.StartsWith("background:"))
+            //Debug.Log(tag);
+            if (tag.StartsWith("battletrigger"))
+            {
+                sceneLoader.loadBattle();
+            }
+            else if (tag.StartsWith("background:"))
             {
                 Debug.Log(tag.Substring("character:".Length));
                 locker.SetActive(":locker"==tag.Substring("character:".Length));
@@ -149,9 +155,9 @@ public class StoryLoader : MonoBehaviour
             // Display the speaker and line in your game
             Debug.Log(speaker);
             stateBox.text = speaker;
-            rivalSprite.SetActive(speaker == "Rival");
+            steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Guy");
             prof_henrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry");
-            christofferSprite.SetActive(speaker == "Christoffer");
+            rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival");
             senpaiSprite.SetActive(speaker == "Justine");
             return true;
             
