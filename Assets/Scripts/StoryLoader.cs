@@ -61,7 +61,10 @@ public class StoryLoader : MonoBehaviour
         if (!string.IsNullOrEmpty(savedProgress))
         {
             story.state.LoadJson(savedProgress);
-
+        }
+        else
+        {
+            story.ResetState();
         }
     }
 
