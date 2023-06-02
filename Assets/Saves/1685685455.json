@@ -1,0 +1,25 @@
+{
+    "name": "Lll",
+    "male": true,
+    "scene": 1,
+    "chapter": 1,
+    "playerID": 1685685455,
+    "items": [
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0",
+        "-1_0"
+    ],
+    "storyProgress": "{\"flows\":{\"DEFAULT_FLOW\":{\"callstack\":{\"threads\":[{\"callstack\":[{\"cPath\":\"TBC\",\"idx\":0,\"exp\":false,\"type\":0}],\"threadIndex\":0}],\"threadCounter\":6},\"outputStream\":[{\"#\":\"character:Player\"},{\"#\":\"background:lib\"},\"^Yeah, we have 5 mins left, we should go. I’ll be right behind you.\",\"\\n\"],\"currentChoices\":[]}},\"currentFlowName\":\"DEFAULT_FLOW\",\"variablesState\":{\"Player\":\"^Lll\"},\"evalStack\":[],\"visitCounts\":{\"\":2,\"0.c-0\":1,\"0.c-0.11.c-2\":1,\"0.c-0.11.g-0\":1,\"0.g-0\":1,\"0.g-0.g-1\":1,\"TBC\":1},\"turnIndices\":{},\"turnIdx\":2,\"storySeed\":3,\"previousRandom\":0,\"inkSaveVersion\":9,\"inkFormatVersion\":20}",
+    "fileName": "1685685455"
+}

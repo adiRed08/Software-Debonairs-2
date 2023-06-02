@@ -194,9 +194,9 @@ public class StoryLoader : MonoBehaviour
                 // Display the speaker and line in your game
                 Debug.Log(speaker);
                 stateBox.text = speaker;
-                rivalSprite.SetActive(speaker == "Rival");
+                steveSprite.SetActive(speaker == "Rival");
                 prof_henrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry");
-                christofferSprite.SetActive(speaker == "Christoffer");
+                rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival");
                 senpaiSprite.SetActive(speaker == "Justine");
                 done = true;
                 return false;
