@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00011658592, y: 7.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &342580239
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySave:
     name: 
+    male: 0
     scene: 0
     chapter: 0
     playerID: 0
@@ -400,6 +401,7 @@ MonoBehaviour:
     - 
     - 
     - 
+    storyProgress: 
     fileName: 
 --- !u!1 &628408186
 GameObject:
@@ -1668,8 +1670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 742.2917, y: 216.4583}
+  m_AnchoredPosition: {x: 0.3941, y: -45.8456}
+  m_SizeDelta: {x: 745.2016, y: 215.0809}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871586093
 MonoBehaviour:
