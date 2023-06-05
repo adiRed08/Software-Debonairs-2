@@ -3598,6 +3598,7 @@ MonoBehaviour:
   caf2: {fileID: 1013399171}
   myGameObject: {fileID: 0}
   SaveHolder: {fileID: 0}
+  done: 0
 --- !u!1 &1829452316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,7 +3710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f88859e8473d34cd7941f028bfb72b45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 020efcff3012139429ea230e1cbd71bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4309,6 +4310,7 @@ MonoBehaviour:
     chapter: 0
     playerID: 0
     items: []
+    storyProgress: 
     fileName: 
   inventoryManager: {fileID: 1551858662}
   inventoryItemPrefab: {fileID: 8440631989903164429, guid: fe93845025d93454aa7779d5f62e91d6, type: 3}
