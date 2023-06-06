@@ -12,6 +12,7 @@ public class StoryLoader : MonoBehaviour
 { 
     
     public string Player;
+    public bool GenderMale;
     public TextAsset inkJSON;
     public Story story;
     public TextMeshProUGUI dialogueBox;
@@ -45,38 +46,61 @@ public class StoryLoader : MonoBehaviour
             myGameObject = GameObject.Find("GAMEMYDATA");
             SaveHolder = (GAMEMYDATA)myGameObject.GetComponent(typeof(GAMEMYDATA));
             Player = SaveHolder.mySave.name;
+            GenderMale = SaveHolder.mySave.male;
             Debug.Log("Success");
         }
         catch
         {
             Player = "You";
+            GenderMale = true;
         }
         story = new(inkJSON.text);
         dialogueChoices.SetActive(false);
         story.variablesState["Player"] = Player;
+        if (GenderMale)
+        {
+            story.variablesState["Gender"] = "Male";
+        }
+        else
+        {
+            story.variablesState["Gender"] = "Female";
+        }
         this.LoadProgress();
         this.nextStoryLine();
     }
 
     public void LoadProgress()
     {
-        string savedProgress = SaveHolder.mySave.storyProgress;
-        if (!string.IsNullOrEmpty(savedProgress))
+        try
         {
-            story.state.LoadJson(savedProgress);
+            string savedProgress = SaveHolder.mySave.storyProgress;
+            if (!string.IsNullOrEmpty(savedProgress))
+            {
+                story.state.LoadJson(savedProgress);
+            }
+        }
+        catch
+        {
+            Debug.Log("Could not load progress");
         }
     }
 
     public void SaveProgress()
     {
-        SaveHolder.mySave.storyProgress = story.state.ToJson();
-        SaveHolder.saveData();
+        try
+        {
+            SaveHolder.mySave.storyProgress = story.state.ToJson();
+            SaveHolder.saveData();
+        }
+        catch
+        {
+            Debug.Log("Progress not saved. Save file not loaded");
+        }
     }
 
     private void OnEnable()
     {
         dialogueSub += madeDialogueChoice;
-
     }
 
 
@@ -92,13 +116,6 @@ public class StoryLoader : MonoBehaviour
         this.nextStoryLine();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void skipButton()
     {
         while (this.nextStoryLine())
@@ -112,6 +129,12 @@ public class StoryLoader : MonoBehaviour
     {
         foreach (string tag in tags)
         {
+            if (tag.StartsWith("sfx:"))
+            {
+                Debug.Log("Sound");
+                var x = GetComponent<SoundFXStory>();
+                x.PlaySoundEffect(tag.Substring("sfx:".Length));
+            }
             //Debug.Log(tag);
             if (tag.StartsWith("battletrigger"))
             {
