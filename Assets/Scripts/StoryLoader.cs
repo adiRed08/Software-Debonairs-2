@@ -7,60 +7,63 @@ using UnityEngine.UI;
 using static DialogueLoader;
 using static DialogueItem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class StoryLoader : MonoBehaviour
 { 
-    
-    public string Player;
-    public TextAsset inkJSON;
-    public Story story;
-    public TextMeshProUGUI dialogueBox;
-    public TextMeshProUGUI stateBox;
-    public GameObject dialogueChoices;
-    public DialogueLoader dialogueOptionManager;
-    public GameObject dialogueCanvas;
-    public GameSaveLoader sceneLoader;
+    [SerializeField] private string _player;
+    [SerializeField] private TextAsset _inkJSON;
+    private Story story;
+    [SerializeField] private TextMeshProUGUI dialogueBox;
+    [SerializeField] private TextMeshProUGUI stateBox;
+    [SerializeField] private GameObject dialogueChoices;
+    [SerializeField] private DialogueLoader dialogueOptionManager;
+    [SerializeField] private GameObject dialogueCanvas;
+    [SerializeField] private GameSaveLoader sceneLoader;
     //characters
-    public GameObject steveSprite;
-    public GameObject rivalSprite;
-    public GameObject senpaiSprite;
-    public GameObject prof_henrySprite;
+    [SerializeField] private GameObject steveSprite;
+    [SerializeField] private GameObject rivalSprite;
+    [SerializeField] private GameObject senpaiSprite;
+    [SerializeField] private GameObject prof_henrySprite;
     //backgrounds
-    public GameObject locker;
-    public GameObject locker2;
-    public GameObject lib;
-    public GameObject grounds;
-    public GameObject classroom;
-    public GameObject caf;
-    public GameObject caf2;
+    [SerializeField] private GameObject locker;
+    [SerializeField] private GameObject locker2;
+    [SerializeField] private GameObject lib;
+    [SerializeField] private GameObject grounds;
+    [SerializeField] private GameObject classroom;
+    [SerializeField] private GameObject caf;
+    [SerializeField] private GameObject caf2;
     //SaveData
-    public GameObject myGameObject;
-    public GAMEMYDATA SaveHolder;
-    public bool done;
+    [SerializeField] private GameObject _myGameObject;
+    [SerializeField] private GAMEMYDATA _saveHolder;
+    private bool done;
     // Start is called before the first frame update
     void Start()
     {
         try
         {
-            myGameObject = GameObject.Find("GAMEMYDATA");
-            SaveHolder = (GAMEMYDATA)myGameObject.GetComponent(typeof(GAMEMYDATA));
-            Player = SaveHolder.mySave.name;
+            //Try to find GAMEDATA
+            _myGameObject = GameObject.Find("GAMEMYDATA");
+            _saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
+            _player = _saveHolder.mySave.name;
             Debug.Log("Success");
         }
         catch
         {
-            Player = "You";
+            //Default to You as the player name
+            _player = "You";
         }
-        story = new(inkJSON.text);
+        //Load story
+        story = new(_inkJSON.text);
         dialogueChoices.SetActive(false);
-        story.variablesState["Player"] = Player;
+        story.variablesState["Player"] = _player;
         this.LoadProgress();
-        this.nextStoryLine();
+        this.NextStoryLine();
     }
 
     public void LoadProgress()
     {
-        string savedProgress = SaveHolder.mySave.storyProgress;
+        string savedProgress = _saveHolder.mySave.storyProgress;
         if (!string.IsNullOrEmpty(savedProgress))
         {
             story.state.LoadJson(savedProgress);
@@ -69,44 +72,34 @@ public class StoryLoader : MonoBehaviour
 
     public void SaveProgress()
     {
-        SaveHolder.mySave.storyProgress = story.state.ToJson();
-        SaveHolder.saveData();
+        _saveHolder.mySave.storyProgress = story.state.ToJson();
+        _saveHolder.saveData();
     }
 
     private void OnEnable()
     {
-        dialogueSub += madeDialogueChoice;
-
+        dialogueSub += MadeDialogueChoice;
     }
-
 
     private void OnDisable()
     {
-        dialogueSub -= madeDialogueChoice;
+        dialogueSub -= MadeDialogueChoice;
     }
 
-    public void madeDialogueChoice(string name)
+    public void MadeDialogueChoice(string name)
     {
         Debug.Log(int.Parse(name));
         story.ChooseChoiceIndex(int.Parse(name));
-        this.nextStoryLine();
+        this.NextStoryLine();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SkipButton()
     {
-        
-    }
-
-
-    public void skipButton()
-    {
-        while (this.nextStoryLine())
+        while (this.NextStoryLine())
         {
             Debug.Log("skip");
         }
     }
-
 
     private string GetState(List<string> tags)
     {
@@ -132,7 +125,7 @@ public class StoryLoader : MonoBehaviour
             {
                 if(tag.Substring("character:".Length) == "Player")
                 {
-                    return Player;
+                    return _player;
                 }
                 return tag.Substring("character:".Length).Trim();
             }
@@ -144,19 +137,19 @@ public class StoryLoader : MonoBehaviour
         return null;
     }
 
-    public void nextButton()
+    public void NextButton()
     {
-        this.nextStoryLine();
+        this.NextStoryLine();
     }
 
 
-    public bool nextStoryLine()
+    public bool NextStoryLine()
     {
         this.SaveProgress();
         if (done)
         {
             SceneManager.LoadScene(0);
-            Destroy(myGameObject);
+            Destroy(_myGameObject);
             return false;
         }
         List<string> listChoices = new();
@@ -212,5 +205,4 @@ public class StoryLoader : MonoBehaviour
             return false;
         }
     }
-
 }

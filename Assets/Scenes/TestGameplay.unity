@@ -3577,8 +3577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0a97ecbb9804d439b710cb89ac17c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: 
-  inkJSON: {fileID: 4900000, guid: 9f73a91d1de0e1b4185a98a9bd283ad3, type: 3}
+  _player: 
+  _inkJSON: {fileID: 4900000, guid: 9f73a91d1de0e1b4185a98a9bd283ad3, type: 3}
   dialogueBox: {fileID: 1466600587}
   stateBox: {fileID: 1712476049}
   dialogueChoices: {fileID: 417867827}
@@ -3596,8 +3596,8 @@ MonoBehaviour:
   classroom: {fileID: 175760066}
   caf: {fileID: 1894755256}
   caf2: {fileID: 1013399171}
-  myGameObject: {fileID: 0}
-  SaveHolder: {fileID: 0}
+  _myGameObject: {fileID: 0}
+  _saveHolder: {fileID: 0}
 --- !u!1 &1829452316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,6 +4309,7 @@ MonoBehaviour:
     chapter: 0
     playerID: 0
     items: []
+    storyProgress: 
     fileName: 
   inventoryManager: {fileID: 1551858662}
   inventoryItemPrefab: {fileID: 8440631989903164429, guid: fe93845025d93454aa7779d5f62e91d6, type: 3}
