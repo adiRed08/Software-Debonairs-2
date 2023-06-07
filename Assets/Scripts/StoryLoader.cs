@@ -14,6 +14,7 @@ public class StoryLoader : MonoBehaviour
     [SerializeField] private string _player;
     [SerializeField] private TextAsset _inkJSON;
     private Story story;
+    private bool _genderMale;
     [SerializeField] private TextMeshProUGUI dialogueBox;
     [SerializeField] private TextMeshProUGUI stateBox;
     [SerializeField] private GameObject dialogueChoices;
@@ -46,34 +47,58 @@ public class StoryLoader : MonoBehaviour
             _myGameObject = GameObject.Find("GAMEMYDATA");
             _saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
             _player = _saveHolder.mySave.name;
+            _genderMale = _saveHolder.mySave.male;
             Debug.Log("Success");
         }
         catch
         {
             //Default to You as the player name
             _player = "You";
+            _genderMale = true;
         }
         //Load story
         story = new(_inkJSON.text);
         dialogueChoices.SetActive(false);
         story.variablesState["Player"] = _player;
+        if (_genderMale)
+        {
+            story.variablesState["Gender"] = "Male";
+        }
+        else
+        {
+            story.variablesState["Gender"] = "Female";
+        }
         this.LoadProgress();
         this.NextStoryLine();
     }
 
     public void LoadProgress()
     {
-        string savedProgress = _saveHolder.mySave.storyProgress;
-        if (!string.IsNullOrEmpty(savedProgress))
+        try
         {
-            story.state.LoadJson(savedProgress);
+            string savedProgress = _saveHolder.mySave.storyProgress;
+            if (!string.IsNullOrEmpty(savedProgress))
+            {
+                story.state.LoadJson(savedProgress);
+            }
+        }
+        catch
+        {
+            Debug.Log("Could not load progress");
         }
     }
 
     public void SaveProgress()
     {
-        _saveHolder.mySave.storyProgress = story.state.ToJson();
-        _saveHolder.saveData();
+        try
+        {
+            _saveHolder.mySave.storyProgress = story.state.ToJson();
+            _saveHolder.saveData();
+        }
+        catch
+        {
+            Debug.Log("Progress not saved. Save file not loaded");
+        }
     }
 
     private void OnEnable()
@@ -105,6 +130,12 @@ public class StoryLoader : MonoBehaviour
     {
         foreach (string tag in tags)
         {
+            if (tag.StartsWith("sfx:"))
+            {
+                Debug.Log("Sound");
+                var x = GetComponent<SoundFXStory>();
+                x.PlaySoundEffect(tag.Substring("sfx:".Length));
+            }
             //Debug.Log(tag);
             if (tag.StartsWith("battletrigger"))
             {
