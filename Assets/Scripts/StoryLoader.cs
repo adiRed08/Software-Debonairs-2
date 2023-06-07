@@ -30,7 +30,7 @@ public class StoryLoader : MonoBehaviour
     [SerializeField] private GameObject prof_harrySprite;
     //femaleSprites
     [SerializeField] private Sprite stephanie;
-    [SerializeField] private static Sprite rival;
+    [SerializeField] private Sprite rival;
     [SerializeField] private Sprite senpai;
     [SerializeField] private Sprite prof_mary;
     //backgrounds

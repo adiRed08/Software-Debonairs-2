@@ -517,7 +517,7 @@ Take note that in the middle of the dialogue, these dialogue options may pop up 
         Shush! #background:caf
     
     #background:caf
-    #character:Mysterious Guy
+    #character:Mysterious Person
     -- I’d like one of those too, please. #background:caf
     
     #background:caf
@@ -525,7 +525,7 @@ Take note that in the middle of the dialogue, these dialogue options may pop up 
     !? #background:caf
     
     #background:caf
-    #character:Mysterious Guy
+    #character:Mysterious Person
     Thank you very much.  #background:caf
     
     #background:caf
