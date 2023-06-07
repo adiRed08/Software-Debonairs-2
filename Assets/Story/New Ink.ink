@@ -4,18 +4,15 @@ VAR Player = "Player"
 #msg
 1ST DAY OF SCHOOL
 
-#sfx:bell
 #background:grounds
 #character:Player
 Woah! This place is huge! The Academy does indeed look bigger from what I expected to see from the internet.
 
-#sfx:bell
 #background:grounds
 wind brushes through {Player}
 
 #background:grounds
 #thoughts
-#sfx:bell
 Ghh that wind just reminded me how nerve wracking I must look right now. I hope I do well, honestly. I didn’t miss anything at home did I? Bag? Check. Pen and papers? Check. Distinguishably amazing looks?
 
 #background:grounds
