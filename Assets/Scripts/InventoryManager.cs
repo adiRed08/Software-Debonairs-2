@@ -85,30 +85,53 @@ public class InventoryManager : MonoBehaviour
     else{
         equipButton.gameObject.SetActive(false);
     }
-
-    equipButton.onClick.RemoveAllListeners();
-    equipButton.onClick.AddListener(() =>
-    {
-        EquipItem(clickedItem.item);
-    });
+    if(clickedItem.item.isEquipped == false){
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            EquipItem(clickedItem.item);
+        });
+        }
+    else if(clickedItem.item.isEquipped == true){
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            unEquipItem(clickedItem.item);
+        });
+    }
     itemNameText.text = clickedItem.item.name;
     itemDescriptionText.text = clickedItem.item.desc;
     
     }
     void EquipItem(Item item)
     {
-    if(item.isEquipped == false)
-    {
-        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
+        Debug.Log("Item equipped: " + item);
         item.isEquipped = true;
-    }
-    else
-    {
-        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
-        item.isEquipped = false;
-    }
-    
 
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            unEquipItem(item);
+        });
     }
+    void unEquipItem(Item item)
+    {
+        Debug.Log("Item unequipped: "+ item);
+        item.isEquipped = false;
+        // Change the text of the equip button to "Equip"
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
+        // Handle the equip button click event
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            EquipItem(item);
+        });
+    }
+
 }
+
+
 
