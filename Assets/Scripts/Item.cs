@@ -12,6 +12,7 @@ public class Item : ScriptableObject
    public Type type;
    public bool stackable = true;
    public string desc;
+   public bool isEquipped;
 }
 
 public enum Type 

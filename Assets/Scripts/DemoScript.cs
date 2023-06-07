@@ -20,4 +20,12 @@ public class DemoScript : MonoBehaviour
             Debug.Log("Item NOT Added.");
         }
     }
+    public void EquipItem(Item item)
+    {
+    // Perform the item equipping logic here
+    // You can update the equipped status of the item and apply any relevant changes to your game
+    item.isEquipped = true;
+
+    // Hide or disable the equip button after equipping the item
+    }
 }

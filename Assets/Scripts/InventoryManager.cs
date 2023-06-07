@@ -15,6 +15,7 @@ public class InventoryManager : MonoBehaviour
     public Item[] possibleItems;
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
+    public Button equipButton;
 
     //adds item to an empty slot in the inventory
 
@@ -77,11 +78,60 @@ public class InventoryManager : MonoBehaviour
 
     void OnItemClicked(InventoryItem clickedItem)
     {
-    // Handle the item click event here
-   //Debug.Log("Clicked item: " + clickedItem.item.name + clickedItem.item.desc);
+    if(clickedItem.item.stackable == false)
+    {
+        equipButton.gameObject.SetActive(true);
+    }
+    else{
+        equipButton.gameObject.SetActive(false);
+    }
+    if(clickedItem.item.isEquipped == false){
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            EquipItem(clickedItem.item);
+        });
+        }
+    else if(clickedItem.item.isEquipped == true){
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            unEquipItem(clickedItem.item);
+        });
+    }
     itemNameText.text = clickedItem.item.name;
     itemDescriptionText.text = clickedItem.item.desc;
+    
+    }
+    void EquipItem(Item item)
+    {
+        Debug.Log("Item equipped: " + item);
+        item.isEquipped = true;
+
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            unEquipItem(item);
+        });
+    }
+    void unEquipItem(Item item)
+    {
+        Debug.Log("Item unequipped: "+ item);
+        item.isEquipped = false;
+        // Change the text of the equip button to "Equip"
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
+        // Handle the equip button click event
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            EquipItem(item);
+        });
     }
 
-    
 }
+
+
+

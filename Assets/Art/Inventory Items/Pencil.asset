@@ -16,4 +16,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   image: {fileID: 21300000, guid: cfd2cae4141b78f4c8516855780c055e, type: 3}
   type: 0
-  stackable: 1
+  stackable: 0
+  desc: 'A trusty wooden "weapon" that fits perfectly on every student''s hand. Equipped:
+    Gain a 10% Damage Bonus!'
+  isEquipped: 1
