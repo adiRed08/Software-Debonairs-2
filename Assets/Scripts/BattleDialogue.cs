@@ -5,6 +5,7 @@ using TMPro;
 
 public class BattleDialogue : MonoBehaviour
 {
+    public Item[] possibleItems;
     public Opponent opponent;
     public Move[] moves;
     private string dialogue;
@@ -19,7 +20,16 @@ public class BattleDialogue : MonoBehaviour
     public TMP_Text toDisplay;
 
    void Start()
-    { 
+    {
+        foreach (Item item in possibleItems)
+        {
+            if(item.stackable == false)
+            {
+                Debug.Log("Item Name: " + item.name);
+                Debug.Log("Is Equipped: " + item.isEquipped);
+            }
+        }
+
         if (isGameDialogue)
         {
             opponent.image = femaleStart;
