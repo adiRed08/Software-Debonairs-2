@@ -17,3 +17,6 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: c5957bef949674143bea9a58b73063d4, type: 3}
   type: 0
   stackable: 1
+  desc: 'A delicious combination of ingredients fit for solving bad days. Consumed:
+    Gain a +15 Damage Reduction (1 instance)!'
+  isEquipped: 0

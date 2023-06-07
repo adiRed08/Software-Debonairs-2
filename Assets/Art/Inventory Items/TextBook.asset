@@ -16,4 +16,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   image: {fileID: 21300000, guid: 2eb5b406dcc10154f93d7d40189695ab, type: 3}
   type: 0
-  stackable: 1
+  stackable: 0
+  desc: 'An invaluable source of knowledge that not only expands your mind but also
+    strengthens your vitality. Equipped: Gain a 20% HP Bonus!'
+  isEquipped: 1

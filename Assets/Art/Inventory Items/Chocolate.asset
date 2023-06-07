@@ -17,3 +17,6 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 6afccb33208bb6d49b43ba032e22b6f5, type: 3}
   type: 0
   stackable: 1
+  desc: 'A treat that sweetens even the sourest of moods, granting a temporary surge
+    joy with every bite. Consumed: Gain a +15 Damage Bonus for your next attack!'
+  isEquipped: 0
