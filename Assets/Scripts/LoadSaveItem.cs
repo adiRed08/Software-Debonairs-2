@@ -24,8 +24,8 @@ public class LoadSaveItem : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        //TextMeshProUGUI[] texts = this.GetComponentsInChildren<TextMeshProUGUI>();
-        //editTextBox.text = texts[1].text;
+        TextMeshProUGUI[] texts = this.GetComponentsInChildren<TextMeshProUGUI>();
+        editTextBox.text = texts[1].text;
         try
         {
             ChapterNo.text = getChapterID(long.Parse(name)).ToString();
