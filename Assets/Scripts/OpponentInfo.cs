@@ -8,10 +8,23 @@ public class OpponentInfo : MonoBehaviour
 {
     public Opponent opponent;
     public Image image;
+    public Sprite female;
+    private GAMEMYDATA saveHolder;
     //:)
 
     void Start()
     {
-        this.image.sprite = opponent.image;
+        GameObject _myGameObject = GameObject.Find("GAMEMYDATA");
+        saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
+        bool _genderMale = saveHolder.mySave.male;
+
+        if (_genderMale)
+        {
+            this.image.sprite = opponent.image;
+        }
+        else
+        {
+            this.image.sprite = female;
+        }
     }
 }

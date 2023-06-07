@@ -10,6 +10,10 @@ public class GenderNewGameButtonLogic : MonoBehaviour
     public GameObject MaleButtonImg;
     public GameObject TheSaveMan;
     public GameObject SAVEPERSISTENCY;
+    public Image prof;
+    public Image rival;
+    public Image senpai;
+    public Image friend;
     public TMP_InputField inputName;
     public bool MALE;
     SaveFile mmm;
@@ -85,5 +89,10 @@ public class GenderNewGameButtonLogic : MonoBehaviour
 
         }
 
+    }
+
+    private Image returnImage(GameObject characterObj)
+    {
+        return characterObj.GetComponent<Image>();
     }
 }

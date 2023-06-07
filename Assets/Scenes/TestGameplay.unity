@@ -2227,7 +2227,7 @@ GameObject:
   - component: {fileID: 1211165411}
   - component: {fileID: 1211165410}
   m_Layer: 5
-  m_Name: prof_henrySprite
+  m_Name: prof_harrySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3578,7 +3578,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: 
-  _inkJSON: {fileID: 4900000, guid: 9f73a91d1de0e1b4185a98a9bd283ad3, type: 3}
+  _inkJSON: {fileID: 0}
+  _maleInk: {fileID: 4900000, guid: 9f73a91d1de0e1b4185a98a9bd283ad3, type: 3}
+  _femaleInk: {fileID: 4900000, guid: ceddfc36d57b09b46a86da1124eea8d8, type: 3}
   dialogueBox: {fileID: 1466600587}
   stateBox: {fileID: 1712476049}
   dialogueChoices: {fileID: 417867827}
@@ -3588,7 +3590,11 @@ MonoBehaviour:
   steveSprite: {fileID: 189550446}
   rivalSprite: {fileID: 1829452316}
   senpaiSprite: {fileID: 559420826}
-  prof_henrySprite: {fileID: 1211165408}
+  prof_harrySprite: {fileID: 1211165408}
+  stephanie: {fileID: 21300000, guid: 40dc06b2ce496ff4d9ea5afe3b4c8451, type: 3}
+  rival: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
+  senpai: {fileID: 21300000, guid: 00a042d28876fdd48bf66061685d5fa5, type: 3}
+  prof_mary: {fileID: 21300000, guid: dd86ab3dc3dcc6f4e8f6ee098bd575f8, type: 3}
   locker: {fileID: 271774116}
   locker2: {fileID: 962186770}
   lib: {fileID: 363091637}
