@@ -1,4 +1,5 @@
 VAR Player = "Player"
+VAR Gender = "Male"
 
 
 #msg
