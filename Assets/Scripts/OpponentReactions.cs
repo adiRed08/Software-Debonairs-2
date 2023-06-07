@@ -14,10 +14,39 @@ public class OpponentReactions : MonoBehaviour
     public Sprite hp50;
     public Sprite hp75;
     public Sprite hp100;
+    public Sprite fhp25;
+    public Sprite fhp50;
+    public Sprite fhp75;
+    public Sprite fhp100;
     public Image image;
+    private GAMEMYDATA saveHolder;
 
     /*Reactions are only for the benefit of the demo and might be added later on if we decide
     to pursue this project further*/
+
+    void Start()
+    {
+        try
+        {
+            //Try to find GAMEDATA
+            GameObject _myGameObject = GameObject.Find("GAMEMYDATA");
+            saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
+            bool _genderMale = saveHolder.mySave.male;
+            if (_genderMale == false)
+            {
+                battleDialogue.opponent.image = fhp100;
+                hp25 = fhp25;
+                hp50 = fhp50;
+                hp75 = fhp75;
+                hp100 = fhp100;
+            }
+            Debug.Log("Success");
+        }
+        catch
+        {
+
+        }
+    }
     public void promptDisplay(string prompt)
     {
         battleDialogue.toDisplay.text = prompt;

@@ -1900,7 +1900,7 @@ MonoBehaviour:
   isGameDialogue: 0
   isEndDialogue: 1
   isOpponentDialogue: 0
-  startImage: {fileID: 0}
+  femaleStart: {fileID: 0}
   toDisplay: {fileID: 815898622}
 --- !u!114 &815898622
 MonoBehaviour:
@@ -2711,6 +2711,10 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 1049418099}
+    - target: {fileID: 6741806779748226703, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: female
+      value: 
+      objectReference: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
     - target: {fileID: 9076885730702466496, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2803,6 +2807,30 @@ PrefabInstance:
       propertyPath: audio
       value: 
       objectReference: {fileID: 1114420030}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: fhp25
+      value: 
+      objectReference: {fileID: 21300000, guid: 6cdf878f36cad8642898a7a62e312974, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: fhp50
+      value: 
+      objectReference: {fileID: 21300000, guid: c8dcd68f69d508f4993ad16967a266b8, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: fhp75
+      value: 
+      objectReference: {fileID: 21300000, guid: cbde39c853ac3db47b9f042dec842edb, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: hp100
+      value: 
+      objectReference: {fileID: 21300000, guid: 020efcff3012139429ea230e1cbd71bf, type: 3}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1049418099}
+    - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: fhp100
+      value: 
+      objectReference: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
     - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
       propertyPath: health
       value: 
@@ -3825,7 +3853,7 @@ MonoBehaviour:
   isGameDialogue: 0
   isEndDialogue: 0
   isOpponentDialogue: 0
-  startImage: {fileID: 0}
+  femaleStart: {fileID: 0}
   toDisplay: {fileID: 1347001499}
 --- !u!114 &1347001499
 MonoBehaviour:

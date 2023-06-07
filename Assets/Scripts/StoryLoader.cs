@@ -13,8 +13,10 @@ public class StoryLoader : MonoBehaviour
 { 
     [SerializeField] private string _player;
     [SerializeField] private TextAsset _inkJSON;
+    [SerializeField] private TextAsset _maleInk;
+    [SerializeField] private TextAsset _femaleInk;
     private Story story;
-    private bool _genderMale;
+    public static bool _genderMale;
     [SerializeField] private TextMeshProUGUI dialogueBox;
     [SerializeField] private TextMeshProUGUI stateBox;
     [SerializeField] private GameObject dialogueChoices;
@@ -25,7 +27,12 @@ public class StoryLoader : MonoBehaviour
     [SerializeField] private GameObject steveSprite;
     [SerializeField] private GameObject rivalSprite;
     [SerializeField] private GameObject senpaiSprite;
-    [SerializeField] private GameObject prof_henrySprite;
+    [SerializeField] private GameObject prof_harrySprite;
+    //femaleSprites
+    [SerializeField] private Sprite stephanie;
+    [SerializeField] private static Sprite rival;
+    [SerializeField] private Sprite senpai;
+    [SerializeField] private Sprite prof_mary;
     //backgrounds
     [SerializeField] private GameObject locker;
     [SerializeField] private GameObject locker2;
@@ -40,7 +47,7 @@ public class StoryLoader : MonoBehaviour
     private bool done;
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         try
         {
             //Try to find GAMEDATA
@@ -48,6 +55,15 @@ public class StoryLoader : MonoBehaviour
             _saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
             _player = _saveHolder.mySave.name;
             _genderMale = _saveHolder.mySave.male;
+            if (_genderMale == true)
+            {
+                _inkJSON = _maleInk;
+            }
+            else
+            {
+                _inkJSON = _femaleInk;
+                femaleImages();
+            }
             Debug.Log("Success");
         }
         catch
@@ -196,9 +212,9 @@ public class StoryLoader : MonoBehaviour
             // Display the speaker and line in your game
             Debug.Log(speaker);
             stateBox.text = speaker;
-            steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Guy");
-            prof_henrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry");
-            rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival");
+            steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Person" || speaker == "Stephanie");
+            prof_harrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry" || speaker == "Professor Mary");
+            rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival" || speaker == "Karen");
             senpaiSprite.SetActive(speaker == "Justine");
             return true;
         }
@@ -218,9 +234,9 @@ public class StoryLoader : MonoBehaviour
                 // Display the speaker and line in your game
                 Debug.Log(speaker);
                 stateBox.text = speaker;
-                steveSprite.SetActive(speaker == "Rival");
-                prof_henrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry");
-                rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival");
+                steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Person" || speaker == "Stephanie");
+                prof_harrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry" || speaker == "Professor Mary");
+                rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival" || speaker == "Karen");
                 senpaiSprite.SetActive(speaker == "Justine");
                 done = true;
                 return false;
@@ -235,5 +251,14 @@ public class StoryLoader : MonoBehaviour
             dialogueCanvas.SetActive(false);
             return false;
         }
+    }
+
+    //changes the images of all characters to Female
+    private void femaleImages()
+    {
+        rivalSprite.GetComponent<Image>().sprite = rival;
+        prof_harrySprite.GetComponent<Image>().sprite = prof_mary;
+        senpaiSprite.GetComponent<Image>().sprite = senpai;
+        steveSprite.GetComponent<Image>().sprite = stephanie;
     }
 }

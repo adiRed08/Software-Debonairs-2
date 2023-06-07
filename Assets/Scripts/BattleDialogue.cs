@@ -14,15 +14,15 @@ public class BattleDialogue : MonoBehaviour
     public bool isOpponentDialogue;
     private static int lastPrompt;
     private int prompt;
-    public Sprite startImage;
+    public Sprite femaleStart;
 
     public TMP_Text toDisplay;
 
    void Start()
-    {
+    { 
         if (isGameDialogue)
         {
-            opponent.image=startImage;
+            opponent.image = femaleStart;
             lastPrompt = -1;
             foreach (Move move in moves)
             {
@@ -35,7 +35,7 @@ public class BattleDialogue : MonoBehaviour
         //{
         //    this.gameObject.SetActive(true);
         //}
-    }
+   }
 
     public void randomPrompt()
     {
