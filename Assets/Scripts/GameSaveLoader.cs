@@ -26,7 +26,14 @@ public class GameSaveLoader : MonoBehaviour
     {
         Dictionary<long, string> saves = getDictSaves();
 
-        DontDestroyOnLoad(theGAMEMYDATAobject);
+        try
+        {
+            DontDestroyOnLoad(theGAMEMYDATAobject);
+        }
+        catch
+        {
+            Debug.Log(theGAMEMYDATAobject);
+        }
 
         toLoad = 0;
 

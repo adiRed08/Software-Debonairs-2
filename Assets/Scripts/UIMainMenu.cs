@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIMainMenu : MonoBehaviour
 {
     
-    [SerializeField] Button _newGame;
+    [SerializeField] private Button _newGame;
    
     void Start()
     {
