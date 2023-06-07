@@ -8,6 +8,18 @@ public class GAMEMYDATA : MonoBehaviour
 {
     public Save mySave;
 
+    private void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "HomeScreenScene")
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void OnEnable()
     {
@@ -17,6 +29,7 @@ public class GAMEMYDATA : MonoBehaviour
 
     public void OnDisable()
     {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         newSAVEFILEAnnounce -= assignData;
     }
 
