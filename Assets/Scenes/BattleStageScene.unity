@@ -1890,6 +1890,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09b48ca2a2448e468cd3abe8c8f39b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleItems:
+  - {fileID: 11400000, guid: b27bd5132f5498b4d8ec5fff000bd9a0, type: 2}
+  - {fileID: 11400000, guid: 142f81e3a8ade4249a104dac219c3702, type: 2}
+  - {fileID: 11400000, guid: 7f50166c8b5a5544ea70fc71e10e52cd, type: 2}
+  - {fileID: 11400000, guid: dde5d173691720f48b9883a795de5b1e, type: 2}
+  - {fileID: 11400000, guid: 242c2dd5f5cb84d47811f6d9f3b5183c, type: 2}
+  - {fileID: 11400000, guid: c59957ca18f12e04ab67c1e0ad7f1da7, type: 2}
   opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
   moves:
   - {fileID: 11400000, guid: fc9cad2e269d9904a867e687b5bd04e8, type: 2}
@@ -3843,6 +3850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09b48ca2a2448e468cd3abe8c8f39b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleItems: []
   opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
   moves:
   - {fileID: 11400000, guid: fc9cad2e269d9904a867e687b5bd04e8, type: 2}
@@ -4875,6 +4883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09b48ca2a2448e468cd3abe8c8f39b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleItems: []
   opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
   moves:
   - {fileID: 11400000, guid: fc9cad2e269d9904a867e687b5bd04e8, type: 2}
@@ -4885,7 +4894,7 @@ MonoBehaviour:
   isGameDialogue: 1
   isEndDialogue: 0
   isOpponentDialogue: 0
-  startImage: {fileID: 0}
+  femaleStart: {fileID: 0}
   toDisplay: {fileID: 1529566680}
 --- !u!114 &1529566680
 MonoBehaviour:
@@ -6005,6 +6014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09b48ca2a2448e468cd3abe8c8f39b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleItems: []
   opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
   moves:
   - {fileID: 11400000, guid: fc9cad2e269d9904a867e687b5bd04e8, type: 2}
@@ -6015,7 +6025,7 @@ MonoBehaviour:
   isGameDialogue: 0
   isEndDialogue: 0
   isOpponentDialogue: 1
-  startImage: {fileID: 0}
+  femaleStart: {fileID: 0}
   toDisplay: {fileID: 1758113510}
 --- !u!114 &1758113510
 MonoBehaviour:
