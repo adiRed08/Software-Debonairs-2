@@ -15,6 +15,7 @@ public class InventoryManager : MonoBehaviour
     public Item[] possibleItems;
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
+    public Button equipButton;
 
     //adds item to an empty slot in the inventory
 
@@ -77,11 +78,37 @@ public class InventoryManager : MonoBehaviour
 
     void OnItemClicked(InventoryItem clickedItem)
     {
-    // Handle the item click event here
-   //Debug.Log("Clicked item: " + clickedItem.item.name + clickedItem.item.desc);
-    itemNameText.text = clickedItem.item.name;
-    itemDescriptionText.text = clickedItem.item.desc;
+    if(clickedItem.item.stackable == false)
+    {
+        equipButton.gameObject.SetActive(true);
+    }
+    else{
+        equipButton.gameObject.SetActive(false);
     }
 
+    equipButton.onClick.RemoveAllListeners();
+    equipButton.onClick.AddListener(() =>
+    {
+        EquipItem(clickedItem.item);
+    });
+    itemNameText.text = clickedItem.item.name;
+    itemDescriptionText.text = clickedItem.item.desc;
     
+    }
+    void EquipItem(Item item)
+    {
+    if(item.isEquipped == false)
+    {
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
+        item.isEquipped = true;
+    }
+    else
+    {
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
+        item.isEquipped = false;
+    }
+    
+
+    }
 }
+
