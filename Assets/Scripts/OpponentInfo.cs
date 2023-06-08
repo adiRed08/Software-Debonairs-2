@@ -25,6 +25,7 @@ public class OpponentInfo : MonoBehaviour
         else
         {
             this.image.sprite = female;
+            opponent.name = "Karen";
         }
     }
 }
