@@ -210,12 +210,7 @@ public class StoryLoader : MonoBehaviour
             string speaker = GetState(story.currentTags);
 
             // Display the speaker and line in your game
-            Debug.Log(speaker);
-            stateBox.text = speaker;
-            steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Person" || speaker == "Stephanie");
-            prof_harrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry" || speaker == "Professor Mary");
-            rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival" || speaker == "Karen");
-            senpaiSprite.SetActive(speaker == "Justine");
+            DetermineSpeaker(speaker);
             return true;
         }
         else
@@ -232,12 +227,7 @@ public class StoryLoader : MonoBehaviour
                 string speaker = GetState(story.currentTags);
 
                 // Display the speaker and line in your game
-                Debug.Log(speaker);
-                stateBox.text = speaker;
-                steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Person" || speaker == "Stephanie");
-                prof_harrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry" || speaker == "Professor Mary");
-                rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival" || speaker == "Karen");
-                senpaiSprite.SetActive(speaker == "Justine");
+                DetermineSpeaker(speaker);
                 done = true;
                 return false;
             }
@@ -251,6 +241,25 @@ public class StoryLoader : MonoBehaviour
             dialogueCanvas.SetActive(false);
             return false;
         }
+    }
+
+    private void DetermineSpeaker(string speaker)
+    {
+        Debug.Log(speaker);
+        stateBox.text = speaker;
+        if(speaker == _player)
+        {
+            speaker = _saveHolder.mySave.lastSpeaker;
+        }
+        else
+        {
+            _saveHolder.mySave.lastSpeaker = speaker;
+        }
+        Debug.Log("TEST");
+        steveSprite.SetActive(speaker == "Steve" || speaker == "Mysterious Person" || speaker == "Stephanie");
+        prof_harrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry" || speaker == "Professor Mary");
+        rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival" || speaker == "Karen");
+        senpaiSprite.SetActive(speaker == "Justine");
     }
 
     //changes the images of all characters to Female
