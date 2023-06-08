@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class OpponentReactions : MonoBehaviour
 {
+
+    public GameObject move1;
+    public TMP_Text dmgAnimation;
     public Move[] moves;
     public BattleDialogue battleDialogue;
     public HealthBarMechanics healthBar;
@@ -205,7 +209,32 @@ public class OpponentReactions : MonoBehaviour
             healthBar.health.value = 0;
         }    
         healthBar.valueText.text = healthBar.health.value.ToString() + "/" + healthBar.health.maxValue.ToString();
+        
         changeFace();
+    }
+
+    public void move1damage()
+    {
+        move1.SetActive(true);
+        GameObject dmgPopup = move1.transform.GetChild(0).gameObject;
+        TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
+        dmgText.text = damage.ToString();
+        StartCoroutine(DisableGameObject(move1));
+        
+    }
+
+    public void MoveDamage(GameObject moveObject){
+        moveObject.SetActive(true);
+        GameObject dmgPopup = moveObject.transform.GetChild(0).gameObject;
+        TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
+        dmgText.text = damage.ToString();
+        StartCoroutine(DisableGameObject(moveObject));
+    }
+
+    private IEnumerator DisableGameObject(GameObject move)
+    {
+        yield return new WaitForSeconds(2f);
+        move.SetActive(false);
     }
 
     public void set_toDisplay(string response)
