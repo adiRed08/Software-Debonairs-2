@@ -36,6 +36,7 @@ public class SaveFile : MonoBehaviour
         public long playerID;
         public string[] items = new string[14];
         public string storyProgress;
+        public string lastSpeaker = "";
         // public InventoryItem[] items = new InventoryItem[14];
         public string fileName;
     }
