@@ -64,7 +64,7 @@ Stay out of my way and you won't need a nose job.
 
 #background:locker
 #character:Player
-That's rich coming from a person with a bad wound on his nose.
+That's rich coming from a person with a bad wound on her nose.
 
 #background:locker
 #character:???
@@ -114,7 +114,7 @@ Sigh. That child just never learns
 
 #background:locker
 #character:Player
-Um... Excuse me, sir?
+Um... Excuse me, Professor?
 
 #background:locker
 #character:Professor
@@ -122,7 +122,7 @@ Oh! Yes, hello there.
 
 #background:locker
 #character:Professor
-I'd like to apologize for his behavior and for mine as well.
+I'd like to apologize for her behavior and for mine as well.
 
 #background:locker
 #character:Player
@@ -134,7 +134,7 @@ Professor Mary. Pleased to meet you. Is there anything I could do for you?
 
 #background:locker
 #character:Player
-Oh actually sir, do you happen to know where the section Ethics 1-B classroom is?
+Oh actually Professor, do you happen to know where the section Ethics 1-B classroom is?
 
 #background:locker
 #character:Player
@@ -145,7 +145,7 @@ As you can see... I'm a bit lost.
 Ha ha! I can tell, because the room that's you're looking for is that way.
 
 #background:locker
-The professor pointer behind {Player}, indicating that he was going on the opposite direction.
+The professor points behind {Player}, indicating that she was going in the opposite direction.
 
 #background:locker
 #character:Player
@@ -165,7 +165,7 @@ I'm saved!
 
 #background:locker
 #character:Player
-Yes sir. Thank you so much.
+Yes Professor. Thank you so much.
 
 #background:locker
 {Player} hurriedly walked by the Professor's side
@@ -176,7 +176,7 @@ I've read your files and I don't see any evidence why you claim to be stupid.
 
 #background:locker
 #character:Player
-I hope all of them were good things, sir?
+I hope all of them were good things, Professor?
 
 #background:locker
 #character:Professor Mary
@@ -184,7 +184,7 @@ Who knows?
 
 #background:locker
 #character:Player
-S-Sir, please don't scare me like that. 
+P-Professor, please don't scare me like that. 
 
 // Screen fades to black and inside the classroom
 #background:classroom
@@ -196,11 +196,11 @@ Here we are. Take any seat. Class will begin
 
 #background:classroom
 #thoughts
-What a nice guy. We got along for a moment but I just hope I won't get to see him as one of my subject teachers.
+What a nice . We got along for a moment but I just hope I won't get to see him as one of my subject teachers.
 
 #background:classroom
 #thoughts
-I have a feeling he likes to tease from time to time
+I have a feeling she likes to tease from time to time
 
 #background:classroom
 #character:Player
@@ -212,7 +212,7 @@ Where do you think you're sitting?
 
 #background:classroom
 #thoughts
-Ah, come on! I'm in the same class as this guy?
+Ah, come on! I'm in the same class as this girl?
 
 #background:classroom
 #character:Player
@@ -259,7 +259,7 @@ Karen. Please take you seat. I don't want to hear any excuses from you today.
 Unbelievable
 
 #background:classroom
-Karen gave up his claimed seat and sat behind {Player}
+Karen gave up her claimed seat and sat behind {Player}
 
 #background:classroom
 Students murmuring silences
@@ -273,7 +273,7 @@ First and foremost, I would like to welcome you all in your first year of colleg
 As freshmen, it would be natural to not be entirely familiar with how the school system runs here. No worries though. Rest assured that what you know about school still applies here. Now …
 
 #background:classroom
-#msg
+#gamemsg
 Mechanics of the Game
 
 #background:classroom
@@ -294,7 +294,7 @@ Oh! And please add this to your notes. You are only able to fight the final boss
 
 #background:classroom
 #character:Student 1
-That sounds really boring, sir. Aren’t there any fun things we could do?
+That sounds really boring, Professor. Aren’t there any fun things we could do?
 
 #background:classroom
 #character:Student 2
@@ -306,7 +306,7 @@ Yes. There’s a series of school events that will help you level up even more. 
 
 #background:classroom
 #thoughts
-... What is he talking about?
+... What is she talking about?
 
 #background:classroom
 #character:Professor Mary
@@ -318,7 +318,7 @@ Alright, so let's move on to a different topic.
 
 #background:classroom
 #thoughts
-... That baffled me for a bit but at least I got the important ideas from his video game analogy. I wonder what those valuable items look like.
+... That baffled me for a bit but at least I got the important ideas from her video game analogy. I wonder what those valuable items look like.
 
 #background:classroom
 #msg
@@ -362,7 +362,7 @@ Oh senpai Justine! It’s so comforting to see a familiar face around. I didn’
 
 #background:locker2
 #character:Player
-I’ve been doing great senpai! The school looks amazing and I’ve had no problems so far. Our adviser was also kind, but he also seemed a bit… peculiar.
+I’ve been doing great senpai! The school looks amazing and I’ve had no problems so far. Our adviser was also kind, but she also seemed a bit… peculiar.
 
 
 #background:locker2
@@ -372,7 +372,7 @@ Is this Professor Mary by any chance?
 
 #background:locker2
 #character:Player
-Uh… No. I don’t really want to say who he or she is.
+Uh… No. I don’t really want to say who she or she is.
 
 
 #background:locker2
@@ -430,32 +430,29 @@ H-hold it now! Sorry {Player}, but I have to go. It was nice seeing you!
 
 #background:locker2
 #thoughts
-Weird. I didn’t know if it’s just me but what he said just now sounded ominous. I’ll just get back to exploring then. 
+Weird. I didn’t know if it’s just me but what she said just now sounded ominous. I’ll just get back to exploring then. 
 
 #background:locker
 #thoughts
 This is where I ran into that- well, calling him unfriendly would be an understatement. Now...
 
 #background:locker
-#msg
-GAME INTRODUCTION TO EXPLORATION
+#gamemsg
+EXPLORATION IN JOURNEY OF RESILIENCY
 
 #background:locker
-#character:Game
+#gamemsg
 Journey of Resiliency allows you to explore different places of the world. Below the screen, you can find different actions that your character can do. 
 
 #background:locker
-#character:Game
+#gamemsg
 The talk option is grayed out right now because no one is in your current location. Later on, when you talk to someone, different topic options will be presented for you to properly initiate a conversation.
 
 #background:locker
-#character:Game
+#gamemsg
 Take note that in the middle of the dialogue, these dialogue options may pop up that may or may not affect the outcome of your journey, choose wisely. 
 
 #background:locker
-(Note: (There are minimal differences in the interactions here depending on what the player chose.))
-
-
 *[Go to cafeteria]
     #background:caf    
     #character:Player
@@ -533,7 +530,7 @@ Take note that in the middle of the dialogue, these dialogue options may pop up 
     
     #character:Player
     #background:caf
-    That surprised me. The guy just came out of nowhere. *stomach growls again*
+    That surprised me. The girl just came out of nowhere. *stomach growls again*
     
     #background:caf
     #thoughts
@@ -587,7 +584,7 @@ Sigh. So unfortunate. I never wanted to do this but,
     
 #background:lib
 #character:Karen
-No business against me will go unpunished. Surround them boys.
+No business against me will go unpunished. Surround them girls.
 
 #background:lib    
 #character:Karen’s friend 1
@@ -627,7 +624,7 @@ H-huh?
  
 #background:lib   
 #character:Karen
-Stay out of this, Stephanie. It’s none of your business. Go back to finding Blue’s clues.
+Stay out of this, Stephanie. It’s none of your business. Go back to LazyTown.
     
 #background:lib
 #character:Stephanie
@@ -650,7 +647,7 @@ Shutting up now.
 Fine, you asked for it. You want to be part of this business? You’ll receive it the hard way.
     
 #background:lib
-He leaves
+She leaves
     
 #background:lib
 #character:Player
@@ -658,7 +655,7 @@ I-I’m glad you wanted to help but it’s alright. I don’t want people to get
 
 #background:lib
 #character:Stephanie
-Hey, now is not the time to be a saint. I have a bone to pick with this guy anyways. These guys won’t stop without a battle.
+Hey, now is not the time to be a saint. I have a bone to pick with this girl anyways. These girls won’t stop without a battle.
 
 #background:lib
 #character:Player
@@ -672,14 +669,15 @@ Yeah, I’m assuming you don’t know what that means so let me show you the rop
 #thoughts
 And here I thought it was hand to hand combat. I was wrong.
     
-
+#gamemsg
 Throughout the game you will encounter multiple confrontations. 
 
+#gamemsg
 You will be presented with a prompt which you must choose how to respond, which is either through confronting or using a consumable item if needed. 
 #battletrigger
 
 #character:Karen
-D-Damn you both, you guys aren’t going to get away with this. Boys, let’s bail.
+D-Damn you both, you girls aren’t going to get away with this. Girls, let’s bail.
 
 #background:lib
 #character:Karen’s friend 2
@@ -687,7 +685,7 @@ Consider yourselves lucky. Just for today.
 
 #background:lib
 #character:Karen’s friend 1
-R-Right behind you Chris.
+R-Right behind you Kar.
 
 #background:lib
 #character:Stephanie

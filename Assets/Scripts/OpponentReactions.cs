@@ -7,11 +7,12 @@ using TMPro;
 public class OpponentReactions : MonoBehaviour
 {
 
-    public GameObject move1;
+    //public GameObject move1;
     public TMP_Text dmgAnimation;
     public Move[] moves;
     public BattleDialogue battleDialogue;
-    public HealthBarMechanics healthBar;
+    public HealthBarMechanics enemyHealthBar;
+    public HealthBarMechanics playerHealthBar;
     public int damage;
     public AudioQueue audio;
     public Sprite hp25;
@@ -60,8 +61,7 @@ public class OpponentReactions : MonoBehaviour
     }
 
     public void react_to_move(Move playerMove, string opponentMove)
-    {
-        damage = 0;
+    { 
         //Debug.Log(opponentMove);
         //Debug.Log(playerMove.moveName == "I'm here to do the work");
         switch (playerMove.moveName)
@@ -201,30 +201,30 @@ public class OpponentReactions : MonoBehaviour
         }
     }
 
-    public void minusHealth()
+    public void minusHealth(HealthBarMechanics healthBar)
     {
         if (healthBar.health.value - damage >= 0)
         {
             healthBar.health.value -= damage;
+            Debug.Log(healthBar.health.value);
         }
         else
         {
             healthBar.health.value = 0;
-        }    
+        }
         healthBar.valueText.text = healthBar.health.value.ToString() + "/" + healthBar.health.maxValue.ToString();
-        
         changeFace();
     }
 
-    public void move1damage()
-    {
-        move1.SetActive(true);
-        GameObject dmgPopup = move1.transform.GetChild(0).gameObject;
-        TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
-        dmgText.text = damage.ToString();
-        StartCoroutine(DisableGameObject(move1));
+    //public void move1damage()
+    //{
+    //    move1.SetActive(true);
+    //    GameObject dmgPopup = move1.transform.GetChild(0).gameObject;
+    //    TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
+    //    dmgText.text = damage.ToString();
+    //    StartCoroutine(DisableGameObject(move1));
         
-    }
+    //}
 
     public void MoveDamage(GameObject moveObject){
         try
@@ -250,17 +250,17 @@ public class OpponentReactions : MonoBehaviour
     }
     public void changeFace()
     {
-        Debug.Log(healthBar.health.value);
-        if (healthBar.health.value <= 75 && healthBar.health.value > 50){
+        Debug.Log(enemyHealthBar.health.value);
+        if (enemyHealthBar.health.value <= 75 && enemyHealthBar.health.value > 50){
             battleDialogue.opponent.image = hp75;
             image.sprite = hp75;
         }
-        else if (healthBar.health.value <= 50 && healthBar.health.value > 25)
+        else if (enemyHealthBar.health.value <= 50 && enemyHealthBar.health.value > 25)
         {
             battleDialogue.opponent.image = hp50;
             image.sprite = hp50;
         }
-        else if (healthBar.health.value <= 25)
+        else if (enemyHealthBar.health.value <= 25)
         {
             battleDialogue.opponent.image = hp25;
             image.sprite = hp25;
