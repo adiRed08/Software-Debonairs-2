@@ -36,6 +36,7 @@ public class OpponentReactions : MonoBehaviour
             GameObject _myGameObject = GameObject.Find("GAMEMYDATA");
             saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
             bool _genderMale = saveHolder.mySave.male;
+            Debug.Log(_genderMale);
             if (_genderMale == false)
             {
                 battleDialogue.opponent.image = fhp100;
@@ -45,11 +46,13 @@ public class OpponentReactions : MonoBehaviour
                 hp100 = fhp100;
             }
             Debug.Log("Success");
-        }
+
+    }
         catch
         {
 
         }
+        this.image.sprite = hp100;
     }
     public void promptDisplay(string prompt)
     {
@@ -224,11 +227,15 @@ public class OpponentReactions : MonoBehaviour
     }
 
     public void MoveDamage(GameObject moveObject){
-        moveObject.SetActive(true);
-        GameObject dmgPopup = moveObject.transform.GetChild(0).gameObject;
-        TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
-        dmgText.text = damage.ToString();
-        StartCoroutine(DisableGameObject(moveObject));
+        try
+        {
+            moveObject.SetActive(true);
+            GameObject dmgPopup = moveObject.transform.GetChild(0).gameObject;
+            TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
+            dmgText.text = '-' + damage.ToString();
+            StartCoroutine(DisableGameObject(moveObject));
+        }
+        catch { }
     }
 
     private IEnumerator DisableGameObject(GameObject move)
