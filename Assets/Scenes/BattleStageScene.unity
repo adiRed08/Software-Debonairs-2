@@ -3254,7 +3254,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1114420030}
     - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
-<<<<<<< Updated upstream
       propertyPath: fhp25
       value: 
       objectReference: {fileID: 21300000, guid: 6cdf878f36cad8642898a7a62e312974, type: 3}
@@ -3278,11 +3277,6 @@ PrefabInstance:
       propertyPath: fhp100
       value: 
       objectReference: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
-=======
-      propertyPath: move1
-      value: 
-      objectReference: {fileID: 1050293462}
->>>>>>> Stashed changes
     - target: {fileID: 9076885731771995959, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
       propertyPath: health
       value: 

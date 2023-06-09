@@ -69,16 +69,17 @@ public class SaveFile : MonoBehaviour
         newSAVEFILEAnnounce(newSave.playerID.ToString());
     }
 
-    public void editSaveName()
+    public static void editSaveName(string name, string newName)
     {
         //db = GameObject.FindGameObjectWithTag("dbTag").GetComponent<PlayerDB>();
-        string fileName = saveFileName.text;
+        string fileName = name;
         string directory = Application.dataPath + "/Saves/" + fileName + ".json";
         if (File.Exists(directory))
         {
+            Debug.Log("Change Name");
             string json = File.ReadAllText(Application.dataPath + "/Saves/" + fileName + ".json");
             Save data = JsonUtility.FromJson<Save>(json);
-            data.name = inputName.text;
+            data.name = newName;
             string jsonToSave = JsonUtility.ToJson(data, true);
             File.WriteAllText(Application.dataPath + "/Saves/" + fileName + ".json",jsonToSave);
             editName(long.Parse(fileName), data.name);

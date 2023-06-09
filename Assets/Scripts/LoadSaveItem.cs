@@ -106,6 +106,8 @@ public class LoadSaveItem : MonoBehaviour, IPointerClickHandler
         {
             editName(long.Parse(this.name), name);
             this.GetComponentsInChildren<TextMeshProUGUI>()[1].text = name;
+            editSaveName(this.name, name);
+
         }
     }
 

@@ -75,7 +75,7 @@ public class StoryLoader : MonoBehaviour
         //Load story
         story = new(_inkJSON.text);
         dialogueChoices.SetActive(false);
-        story.variablesState["Player"] = _player;
+        story.variablesState["Player"] = _saveHolder.mySave.name;
         if (_genderMale)
         {
             story.variablesState["Gender"] = "Male";
@@ -96,7 +96,11 @@ public class StoryLoader : MonoBehaviour
             if (!string.IsNullOrEmpty(savedProgress))
             {
                 story.state.LoadJson(savedProgress);
+                story.variablesState["Player"] = _saveHolder.mySave.name;
+                _player = _saveHolder.mySave.name;
+                SaveProgress();
             }
+            
         }
         catch
         {
