@@ -6,6 +6,7 @@ using TMPro;
 
 public class HealthBarMechanics : MonoBehaviour
 {
+    public Item[] possibleItems;
     public Slider health;
     public Opponent opponent;
     public TMP_Text valueText;
@@ -27,6 +28,12 @@ public class HealthBarMechanics : MonoBehaviour
 
         health.value = 100;
         health.maxValue = 100;
+
+        if (possibleItems[0].isEquipped)
+        {
+            health.maxValue = health.maxValue + 10;
+            health.value = health.value + 10;
+        }
         valueText.text = health.value.ToString() + "/" + health.maxValue.ToString();
 
         if (isOpponent)
@@ -41,12 +48,13 @@ public class HealthBarMechanics : MonoBehaviour
             //valueText.text = health.value.ToString() + "/" + health.maxValue.ToString();
             //opponentName.text = opponent.name;
         }
-
+        
+        
        
     }
 
-        //void setPlayerName(string name, Slider playerHealth)
-        //    {
-
-        //    }
+    public void heal(int amount)
+    {
+        health.value = health.value + amount;
+    }
 }

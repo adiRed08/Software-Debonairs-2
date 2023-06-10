@@ -18,11 +18,12 @@ public class BattleDialogue : MonoBehaviour
     private int prompt;
     public Sprite femaleStart;
     public GameObject playerOptions;
-
+    public bool inBattle = false;
     public TMP_Text toDisplay;
 
    void Start()
     {
+        inBattle = true;
         foreach (Item item in possibleItems)
         {
             if(item.stackable == false)
@@ -124,6 +125,7 @@ public class BattleDialogue : MonoBehaviour
             {
                 toDisplay.text = "You have been defeated.";
             }
+            inBattle = false;
         }
 
         else if (isOpponentDialogue)

@@ -8,6 +8,7 @@ public class OpponentReactions : MonoBehaviour
 {
 
     //public GameObject move1;
+    public Item[] possibleItems;
     public TMP_Text dmgAnimation;
     public Move[] moves;
     public BattleDialogue battleDialogue;
@@ -97,6 +98,10 @@ public class OpponentReactions : MonoBehaviour
                     set_toDisplay("That's the best you can come up with?");
                     damage = 10;
                 }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
+                }
                 break;
 
             case "Does that matter?":
@@ -140,6 +145,10 @@ public class OpponentReactions : MonoBehaviour
                     set_toDisplay("Tsk Tsk, I guess the important stuff doesn't really matter to you huh.");
                     damage = 10;
                 }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
+                }
                 break;
 
             case "That won't affect me":
@@ -167,6 +176,10 @@ public class OpponentReactions : MonoBehaviour
                 {
                     set_toDisplay("That's the best you can come up with?");
                     damage = 10;
+                }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
                 }
                 break;
 
@@ -197,12 +210,20 @@ public class OpponentReactions : MonoBehaviour
                     set_toDisplay("I guess you're just that used to not doing anything that you can't even defend yourself. *laughs at you*"); 
                     damage = 10;
                 }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
+                }
                 break;
         }
     }
 
     public void minusHealth(HealthBarMechanics healthBar)
     {
+        if(possibleItems[0].isEquipped)
+        {
+            damage = damage + 5;
+        }
         if (healthBar.health.value - damage >= 0)
         {
             healthBar.health.value -= damage;
@@ -227,6 +248,10 @@ public class OpponentReactions : MonoBehaviour
     //}
 
     public void MoveDamage(GameObject moveObject){
+        if(possibleItems[0].isEquipped)
+        {
+            damage = damage + 5;
+        }
         try
         {
             moveObject.SetActive(true);
