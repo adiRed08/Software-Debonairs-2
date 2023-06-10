@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b988e1fe69cb845a00536f631c2487, type: 3}
   m_Name: Milk
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
   tile: {fileID: 0}
   image: {fileID: 21300000, guid: 585403398493f894fa58a04e232d33f6, type: 3}
   type: 0
   stackable: 1
-  desc: 'A box of dairy goodness good for your "dairy" adventures. Consumed: Restore
-    20% of Player''s HP'
+  desc: 'A box of dairy goodness good for your "dairy" adventures. Consumed: Gain
+    15 HP'
+  isEquipped: 0
