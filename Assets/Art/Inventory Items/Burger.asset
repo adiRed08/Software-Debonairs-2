@@ -18,5 +18,5 @@ MonoBehaviour:
   type: 0
   stackable: 1
   desc: 'A delicious combination of ingredients fit for solving bad days. Consumed:
-    Gain 5 HP'
+    Restores 5 HP'
   isEquipped: 0
