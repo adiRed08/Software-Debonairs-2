@@ -7,11 +7,13 @@ using TMPro;
 public class OpponentReactions : MonoBehaviour
 {
 
-    public GameObject move1;
+    //public GameObject move1;
+    public Item[] possibleItems;
     public TMP_Text dmgAnimation;
     public Move[] moves;
     public BattleDialogue battleDialogue;
-    public HealthBarMechanics healthBar;
+    public HealthBarMechanics enemyHealthBar;
+    public HealthBarMechanics playerHealthBar;
     public int damage;
     public AudioQueue audio;
     public Sprite hp25;
@@ -36,6 +38,7 @@ public class OpponentReactions : MonoBehaviour
             GameObject _myGameObject = GameObject.Find("GAMEMYDATA");
             saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
             bool _genderMale = saveHolder.mySave.male;
+            Debug.Log(_genderMale);
             if (_genderMale == false)
             {
                 battleDialogue.opponent.image = fhp100;
@@ -45,11 +48,13 @@ public class OpponentReactions : MonoBehaviour
                 hp100 = fhp100;
             }
             Debug.Log("Success");
-        }
+
+    }
         catch
         {
 
         }
+        this.image.sprite = hp100;
     }
     public void promptDisplay(string prompt)
     {
@@ -57,8 +62,7 @@ public class OpponentReactions : MonoBehaviour
     }
 
     public void react_to_move(Move playerMove, string opponentMove)
-    {
-        damage = 0;
+    { 
         //Debug.Log(opponentMove);
         //Debug.Log(playerMove.moveName == "I'm here to do the work");
         switch (playerMove.moveName)
@@ -93,6 +97,10 @@ public class OpponentReactions : MonoBehaviour
                 {
                     set_toDisplay("That's the best you can come up with?");
                     damage = 10;
+                }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
                 }
                 break;
 
@@ -137,6 +145,10 @@ public class OpponentReactions : MonoBehaviour
                     set_toDisplay("Tsk Tsk, I guess the important stuff doesn't really matter to you huh.");
                     damage = 10;
                 }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
+                }
                 break;
 
             case "That won't affect me":
@@ -164,6 +176,10 @@ public class OpponentReactions : MonoBehaviour
                 {
                     set_toDisplay("That's the best you can come up with?");
                     damage = 10;
+                }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
                 }
                 break;
 
@@ -194,41 +210,57 @@ public class OpponentReactions : MonoBehaviour
                     set_toDisplay("I guess you're just that used to not doing anything that you can't even defend yourself. *laughs at you*"); 
                     damage = 10;
                 }
+                if(possibleItems[0].isEquipped)
+                {
+                    damage = damage + 5;
+                }
                 break;
         }
     }
 
-    public void minusHealth()
+    public void minusHealth(HealthBarMechanics healthBar)
     {
+        if(possibleItems[0].isEquipped)
+        {
+            damage = damage + 5;
+        }
         if (healthBar.health.value - damage >= 0)
         {
             healthBar.health.value -= damage;
+            Debug.Log(healthBar.health.value);
         }
         else
         {
             healthBar.health.value = 0;
-        }    
+        }
         healthBar.valueText.text = healthBar.health.value.ToString() + "/" + healthBar.health.maxValue.ToString();
-        
         changeFace();
     }
 
-    public void move1damage()
-    {
-        move1.SetActive(true);
-        GameObject dmgPopup = move1.transform.GetChild(0).gameObject;
-        TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
-        dmgText.text = damage.ToString();
-        StartCoroutine(DisableGameObject(move1));
+    //public void move1damage()
+    //{
+    //    move1.SetActive(true);
+    //    GameObject dmgPopup = move1.transform.GetChild(0).gameObject;
+    //    TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
+    //    dmgText.text = damage.ToString();
+    //    StartCoroutine(DisableGameObject(move1));
         
-    }
+    //}
 
     public void MoveDamage(GameObject moveObject){
-        moveObject.SetActive(true);
-        GameObject dmgPopup = moveObject.transform.GetChild(0).gameObject;
-        TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
-        dmgText.text = damage.ToString();
-        StartCoroutine(DisableGameObject(moveObject));
+        if(possibleItems[0].isEquipped)
+        {
+            damage = damage + 5;
+        }
+        try
+        {
+            moveObject.SetActive(true);
+            GameObject dmgPopup = moveObject.transform.GetChild(0).gameObject;
+            TMP_Text dmgText = dmgPopup.GetComponent<TMP_Text>();
+            dmgText.text = '-' + damage.ToString();
+            StartCoroutine(DisableGameObject(moveObject));
+        }
+        catch { }
     }
 
     private IEnumerator DisableGameObject(GameObject move)
@@ -243,17 +275,17 @@ public class OpponentReactions : MonoBehaviour
     }
     public void changeFace()
     {
-        Debug.Log(healthBar.health.value);
-        if (healthBar.health.value <= 75 && healthBar.health.value > 50){
+        Debug.Log(enemyHealthBar.health.value);
+        if (enemyHealthBar.health.value <= 75 && enemyHealthBar.health.value > 50){
             battleDialogue.opponent.image = hp75;
             image.sprite = hp75;
         }
-        else if (healthBar.health.value <= 50 && healthBar.health.value > 25)
+        else if (enemyHealthBar.health.value <= 50 && enemyHealthBar.health.value > 25)
         {
             battleDialogue.opponent.image = hp50;
             image.sprite = hp50;
         }
-        else if (healthBar.health.value <= 25)
+        else if (enemyHealthBar.health.value <= 25)
         {
             battleDialogue.opponent.image = hp25;
             image.sprite = hp25;

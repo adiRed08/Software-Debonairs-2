@@ -16,7 +16,8 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
     public Button equipButton;
-
+    public BattleDialogue battleDialogue;
+    public HealthBarMechanics healthBarMechanics;
     //adds item to an empty slot in the inventory
 
     void Start()
@@ -26,8 +27,6 @@ public class InventoryManager : MonoBehaviour
         addItem(possibleItems[1]);
         addItem(possibleItems[2]);
         addItem(possibleItems[3]);
-        addItem(possibleItems[4]);
-        addItem(possibleItems[5]);
     }
     
     public bool addItem(Item item)
@@ -78,14 +77,38 @@ public class InventoryManager : MonoBehaviour
 
     void OnItemClicked(InventoryItem clickedItem)
     {
-    if(clickedItem.item.stackable == false)
+    if(clickedItem.item.stackable == false && battleDialogue.inBattle == false)
     {
         equipButton.gameObject.SetActive(true);
     }
-    else{
+    else if(clickedItem.item.stackable == true && battleDialogue.inBattle == true)
+    {
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Consume";
+        equipButton.gameObject.SetActive(true);
+    }
+    else
+    {
         equipButton.gameObject.SetActive(false);
     }
-    if(clickedItem.item.isEquipped == false){
+    if (clickedItem.item.stackable){
+        equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Consume";
+        equipButton.onClick.RemoveAllListeners();
+        equipButton.onClick.AddListener(() =>
+        {
+            if(clickedItem.item.id == 2)
+            {
+                healthBarMechanics.heal(10);
+            }
+            else
+            {
+                healthBarMechanics.heal(5);
+            }
+            removeItem(clickedItem.item);
+            itemDescriptionText.text = "(Consumed!)";
+        });
+        
+    }
+    else if(clickedItem.item.isEquipped == false && clickedItem.item.stackable == false){
         equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
         equipButton.onClick.RemoveAllListeners();
         equipButton.onClick.AddListener(() =>
@@ -93,7 +116,7 @@ public class InventoryManager : MonoBehaviour
             EquipItem(clickedItem.item);
         });
         }
-    else if(clickedItem.item.isEquipped == true){
+    else if(clickedItem.item.isEquipped == true && clickedItem.item.stackable == false){
         equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
         equipButton.onClick.RemoveAllListeners();
         equipButton.onClick.AddListener(() =>
@@ -101,7 +124,14 @@ public class InventoryManager : MonoBehaviour
             unEquipItem(clickedItem.item);
         });
     }
-    itemNameText.text = clickedItem.item.name;
+    if(clickedItem.item.stackable == false && clickedItem.item.isEquipped)
+    {
+        itemNameText.text = clickedItem.item.name + "\n(Equipped)";
+    }
+    else 
+    {
+        itemNameText.text = clickedItem.item.name;
+    }
     itemDescriptionText.text = clickedItem.item.desc;
     
     }
@@ -109,7 +139,6 @@ public class InventoryManager : MonoBehaviour
     {
         Debug.Log("Item equipped: " + item);
         item.isEquipped = true;
-
         equipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unequip";
         equipButton.onClick.RemoveAllListeners();
         equipButton.onClick.AddListener(() =>
@@ -130,7 +159,36 @@ public class InventoryManager : MonoBehaviour
             EquipItem(item);
         });
     }
+    public void removeItem(Item item)
+    {
+        // Iterate over inventory slots to find the item
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
 
+            // Check if the item exists in the slot
+            if (itemInSlot != null && itemInSlot.item == item)
+            {
+                // Decrease the count of the item
+                itemInSlot.count--;
+
+                // If count becomes zero, remove the item from the slot
+                if (itemInSlot.count == 0)
+                {
+                    Destroy(itemInSlot.gameObject);
+                }
+                else
+                {
+                    // Update the count display
+                    itemInSlot.RefreshCount();
+                }
+
+                // Exit the loop after removing the item
+                return;
+            }
+        }
+    }
 }
 
 

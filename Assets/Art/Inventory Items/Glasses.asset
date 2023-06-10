@@ -18,5 +18,5 @@ MonoBehaviour:
   type: 1
   stackable: 0
   desc: 'A pair of stylish spectacles that grants clear vision to its user. Equipped:
-    Gain a 10% Damage Reduction Bonus!'
+    Gain +10 HP!'
   isEquipped: 1

@@ -13,14 +13,17 @@ public class BattleDialogue : MonoBehaviour
     public bool isGameDialogue;
     public bool isEndDialogue;
     public bool isOpponentDialogue;
+    public bool isPlayerDialogue;
     private static int lastPrompt;
     private int prompt;
     public Sprite femaleStart;
-
+    public GameObject playerOptions;
+    public bool inBattle = false;
     public TMP_Text toDisplay;
 
    void Start()
     {
+        inBattle = true;
         foreach (Item item in possibleItems)
         {
             if(item.stackable == false)
@@ -61,6 +64,12 @@ public class BattleDialogue : MonoBehaviour
 
             }
         }
+
+        int[] enemyDMG = {5,15,25};
+        int randDamage = Random.Range(0, enemyDMG.Length);
+        int damage = enemyDMG[randDamage];
+        reactions.damage = damage;
+        reactions.minusHealth(reactions.playerHealthBar);
     }
 
     public void optionDialogue(Move move)
@@ -84,18 +93,101 @@ public class BattleDialogue : MonoBehaviour
         toDisplay.text = opponent.name + " took " + reactions.damage + " damage";
     }
 
+    public void disableOptions(GameObject options)
+    {
+        Debug.Log("This" + reactions.playerHealthBar.health.value.ToString());
+        if (reactions.playerHealthBar.health.value - 5 <= 0 || reactions.enemyHealthBar.health.value -5 <= 0)
+        {
+            options.gameObject.SetActive(false);
+        } 
+    }
+
     public void Update()
     {
-        if (isEndDialogue && reactions.healthBar.health.value == 0) {
-            toDisplay.text = opponent.name + " has been defeated.";
-        }
-        else if (isOpponentDialogue && reactions.healthBar.health.value == 0)
+
+        if (isGameDialogue)
         {
-            toDisplay.text = opponent.endRemark;
+            if (reactions.playerHealthBar.health.value == 0 || reactions.enemyHealthBar.health.value == 0)
+            {
+                this.gameObject.SetActive(false);
+            }
+
         }
-        else if (isGameDialogue && reactions.healthBar.health.value == 0)
+
+        else if (isEndDialogue)
         {
-            this.gameObject.SetActive(false);
+            if (reactions.enemyHealthBar.health.value - 5 <= 0)
+            {
+                toDisplay.text = opponent.name + " has been defeated.";
+            }
+
+            else if (reactions.playerHealthBar.health.value - 5 <= 0)
+            {
+                toDisplay.text = "You have been defeated.";
+            }
+            inBattle = false;
         }
+
+        else if (isOpponentDialogue)
+        {
+            if (reactions.enemyHealthBar.health.value == 0)
+            {
+                toDisplay.text = opponent.endRemark;
+            }
+
+            else if (reactions.playerHealthBar.health.value == 0)
+            {
+                toDisplay.text = "Let this serve as your lesson for today.";
+                reactions.image.sprite = reactions.hp100;
+            }
+        }
+
+       
+            
+
+
+        //else if (!isGameDialogue)
+        //{
+        //    if (reactions.playerHealthBar.health.value == 0 || reactions.enemyHealthBar.health.value == 0)
+        //    { 
+        //        this.gameObject.SetActive(false);
+        //    }
+        //}
     }
+    //    if (isEndDialogue)
+    //    {
+    //        if (reactions.enemyHealthBar.health.value == 0)
+    //        {
+    //            toDisplay.text = opponent.name + " has been defeated.";
+    //        }
+    //        else if (reactions.playerHealthBar.health.value == 0)
+    //        {
+    //            toDisplay.text = "You have been defeated.";
+    //        }
+    //    }
+
+    //    else if (isOpponentDialogue)
+    //    {
+    //        if (reactions.enemyHealthBar.health.value == 0)
+    //        {
+    //            toDisplay.text = opponent.endRemark;
+    //        }
+    //        else if (reactions.playerHealthBar.health.value == 0)
+    //        {
+    //            toDisplay.text = "Let this serve as your lesson for today.";
+    //            reactions.image.sprite = reactions.hp100;
+    //        }
+    //    }
+
+    //    else if (isGameDialogue)
+    //    {
+    //        if (reactions.playerHealthBar.health.value == 0 || reactions.enemyHealthBar.health.value == 0)
+    //        {
+    //            Debug.Log("This works, I swear");
+    //            this.gameObject.SetActive(false);
+    //        }
+    //    }
+    //}
+
+
 }

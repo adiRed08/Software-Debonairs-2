@@ -114,7 +114,7 @@ Sigh. That child just never learns
 
 #background:locker
 #character:Player
-Um... Excuse me, sir?
+Um... Excuse me, Professor?
 
 #background:locker
 #character:Professor
@@ -134,7 +134,7 @@ Professor Harry. Pleased to meet you. Is there anything I could do for you?
 
 #background:locker
 #character:Player
-Oh actually sir, do you happen to know where the section Ethics 1-B classroom is?
+Oh actually Professor, do you happen to know where the section Ethics 1-B classroom is?
 
 #background:locker
 #character:Player
@@ -145,7 +145,7 @@ As you can see... I'm a bit lost.
 Ha ha! I can tell, because the room that's you're looking for is that way.
 
 #background:locker
-The professor pointer behind {Player}, indicating that he was going on the opposite direction.
+The professor points behind {Player}, indicating that he was going in the opposite direction.
 
 #background:locker
 #character:Player
@@ -165,7 +165,7 @@ I'm saved!
 
 #background:locker
 #character:Player
-Yes sir. Thank you so much.
+Yes Professor. Thank you so much.
 
 #background:locker
 {Player} hurriedly walked by the Professor's side
@@ -176,7 +176,7 @@ I've read your files and I don't see any evidence why you claim to be stupid.
 
 #background:locker
 #character:Player
-I hope all of them were good things, sir?
+I hope all of them were good things, Professor?
 
 #background:locker
 #character:Professor Harry
@@ -184,7 +184,7 @@ Who knows?
 
 #background:locker
 #character:Player
-S-Sir, please don't scare me like that. 
+P-Professor, please don't scare me like that. 
 
 // Screen fades to black and inside the classroom
 #background:classroom
@@ -273,7 +273,7 @@ First and foremost, I would like to welcome you all in your first year of colleg
 As freshmen, it would be natural to not be entirely familiar with how the school system runs here. No worries though. Rest assured that what you know about school still applies here. Now …
 
 #background:classroom
-#msg
+#gamemsg
 Mechanics of the Game
 
 #background:classroom
@@ -294,7 +294,7 @@ Oh! And please add this to your notes. You are only able to fight the final boss
 
 #background:classroom
 #character:Student 1
-That sounds really boring, sir. Aren’t there any fun things we could do?
+That sounds really boring, Professor. Aren’t there any fun things we could do?
 
 #background:classroom
 #character:Student 2
@@ -437,25 +437,22 @@ Weird. I didn’t know if it’s just me but what he said just now sounded omino
 This is where I ran into that- well, calling him unfriendly would be an understatement. Now...
 
 #background:locker
-#msg
+#gamemsg
 GAME INTRODUCTION TO EXPLORATION
 
 #background:locker
-#character:Game
+#gamemsg
 Journey of Resiliency allows you to explore different places of the world. Below the screen, you can find different actions that your character can do. 
 
 #background:locker
-#character:Game
+#gamemsg
 The talk option is grayed out right now because no one is in your current location. Later on, when you talk to someone, different topic options will be presented for you to properly initiate a conversation.
 
 #background:locker
-#character:Game
+#gamemsg
 Take note that in the middle of the dialogue, these dialogue options may pop up that may or may not affect the outcome of your journey, choose wisely. 
 
 #background:locker
-(Note: (There are minimal differences in the interactions here depending on what the player chose.))
-
-
 *[Go to cafeteria]
     #background:caf    
     #character:Player
@@ -672,9 +669,10 @@ Yeah, I’m assuming you don’t know what that means so let me show you the rop
 #thoughts
 And here I thought it was hand to hand combat. I was wrong.
     
-
+#gamemsg
 Throughout the game you will encounter multiple confrontations. 
 
+#gamemsg
 You will be presented with a prompt which you must choose how to respond, which is either through confronting or using a consumable item if needed. 
 #battletrigger
 

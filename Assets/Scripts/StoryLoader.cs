@@ -18,6 +18,7 @@ public class StoryLoader : MonoBehaviour
     private Story story;
     public static bool _genderMale;
     [SerializeField] private TextMeshProUGUI dialogueBox;
+    [SerializeField] private TextMeshProUGUI gameDialogueBox;
     [SerializeField] private TextMeshProUGUI stateBox;
     [SerializeField] private GameObject dialogueChoices;
     [SerializeField] private DialogueLoader dialogueOptionManager;
@@ -28,6 +29,8 @@ public class StoryLoader : MonoBehaviour
     [SerializeField] private GameObject rivalSprite;
     [SerializeField] private GameObject senpaiSprite;
     [SerializeField] private GameObject prof_harrySprite;
+    //GameMessage
+    [SerializeField] private GameObject gameMessage;
     //femaleSprites
     [SerializeField] private Sprite stephanie;
     [SerializeField] private Sprite rival;
@@ -157,7 +160,7 @@ public class StoryLoader : MonoBehaviour
                 x.PlaySoundEffect(tag.Substring("sfx:".Length));
             }
             //Debug.Log(tag);
-            if (tag.StartsWith("battletrigger"))
+            else if (tag.StartsWith("battletrigger"))
             {
                 sceneLoader.loadBattle();
             }
@@ -172,7 +175,7 @@ public class StoryLoader : MonoBehaviour
                 caf.SetActive(":caf"==tag.Substring("character:".Length));
                 caf2.SetActive(":caf2"==tag.Substring("character:".Length));
             }
-            if (tag.StartsWith("character:"))
+            else if (tag.StartsWith("character:"))
             {
                 if(tag.Substring("character:".Length) == "Player")
                 {
@@ -183,6 +186,10 @@ public class StoryLoader : MonoBehaviour
             else if (tag.StartsWith("thoughts"))
             {
                 return "*player thoughts*";
+            }
+            else if (tag.StartsWith("gamemsg"))
+            {
+                return "game";
             }
         }
         return null;
@@ -210,9 +217,14 @@ public class StoryLoader : MonoBehaviour
             dialogueCanvas.SetActive(true);
             
             dialogueBox.text = story.Continue();
+            gameDialogueBox.text = dialogueBox.text;
             // Get the current speaker variable from the VariablesState dictionary
             string speaker = GetState(story.currentTags);
 
+            if (speaker == "game")
+            {
+                dialogueBox.text = "";
+            }
             // Display the speaker and line in your game
             DetermineSpeaker(speaker);
             return true;
@@ -250,13 +262,18 @@ public class StoryLoader : MonoBehaviour
     private void DetermineSpeaker(string speaker)
     {
         Debug.Log(speaker);
-        stateBox.text = speaker;
-        if(speaker == _player)
+        if(speaker == "game")
+        {
+            stateBox.text = "";
+        }
+        else if(speaker == _player)
         {
             speaker = _saveHolder.mySave.lastSpeaker;
+            stateBox.text = _player;
         }
         else
         {
+            stateBox.text = speaker;
             _saveHolder.mySave.lastSpeaker = speaker;
         }
         Debug.Log("TEST");
@@ -264,6 +281,7 @@ public class StoryLoader : MonoBehaviour
         prof_harrySprite.SetActive(speaker == "Professor" || speaker == "Professor Harry" || speaker == "Professor Mary");
         rivalSprite.SetActive(speaker == "Christoffer" || speaker == "Rival" || speaker == "Karen");
         senpaiSprite.SetActive(speaker == "Justine");
+        gameMessage.SetActive(speaker == "game");
     }
 
     //changes the images of all characters to Female
