@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HomeScreenScene.unity
+    path: Assets/Scenes/ENDSCENE.unity
     guid: ac3884b611c233e4097cdaa9a390cbfe
   - enabled: 1
     path: Assets/Scenes/NewGameScene.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleStageScene.unity
     guid: e6b57d8c36ba38b4dbe76d183256b817
+  - enabled: 1
+    path: Assets/Scenes/HomeScreenScene.unity
+    guid: da2a371ba0b40f341a254c42cd41a712
   m_configObjects: {}

@@ -11,7 +11,7 @@ public class BackButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     [SerializeField] private TMP_Text _text;
     [SerializeField] private Sprite _default, _pressed;
     [SerializeField] Button _backButton;
-   
+
     void Start()
     {
         _backButton.onClick.AddListener(GoBack);
