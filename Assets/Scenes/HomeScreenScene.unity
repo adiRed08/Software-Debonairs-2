@@ -1060,6 +1060,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 386408487}
+  source: {fileID: 292095056}
+  clip: {fileID: 8300000, guid: 56405fc5542d3b1429d74becadb0d7e0, type: 3}
 --- !u!114 &292095055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,7 +1086,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56405fc5542d3b1429d74becadb0d7e0, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1420,6 +1422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 386408487}
+  source: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!114 &386408489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7384,6 +7388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 386408487}
+  source: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!114 &2113572246
 MonoBehaviour:
   m_ObjectHideFlags: 0

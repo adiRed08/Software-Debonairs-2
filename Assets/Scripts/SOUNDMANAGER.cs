@@ -7,10 +7,13 @@ public class SOUNDMANAGER : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     public static SOUNDMANAGER instance;
+    public AudioSource source;
+    public AudioClip clip;
 
 
     void Start()
     {
+        Debug.Log("Start");
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
             PlayerPrefs.SetFloat("musicVolume", 1);
@@ -20,17 +23,24 @@ public class SOUNDMANAGER : MonoBehaviour
         {
             Load();
         }
+
+        //soundPlayed = true;
+        //Destroy(gameObject);
     }
 
-    private void Awake()
+    void Awake()
     {
-        // Check if an instance already exists
+        Debug.Log("Awake");
+        // Check if an instance already 
+
         if (instance == null)
         {
             // If not, set this as the instance and mark it to not be destroyed on scene change
             instance = this;
             DontDestroyOnLoad(gameObject);
+            source.PlayOneShot(clip);
         }
+
         else if (gameObject.isStatic)
         {
             // If an instance already exists, destroy this one
@@ -44,7 +54,7 @@ public class SOUNDMANAGER : MonoBehaviour
         AudioListener.volume = volumeSlider.value;
         Save();
     }
-    
+
     private void Load()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
