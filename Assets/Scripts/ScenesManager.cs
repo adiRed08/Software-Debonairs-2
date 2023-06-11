@@ -19,6 +19,7 @@ public class ScenesManager : MonoBehaviour
         NewGameScene,
         LoadGameScene,
         BattleStageScene,
+        ENDSCENE,
     }
 
     public void LoadScene(Scene scene)
@@ -49,6 +50,11 @@ public class ScenesManager : MonoBehaviour
     public void LoadBattleScene()
     {
         SceneManager.LoadScene(Scene.BattleStageScene.ToString());
+    }
+
+    public void LoadEndScene()
+    {
+        SceneManager.LoadScene(Scene.ENDSCENE.ToString());
     }
 
 

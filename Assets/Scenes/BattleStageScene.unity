@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810283808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0632be31e712c924ca8cd03e9e02d125, type: 3}
   m_Name: 
@@ -3016,6 +3016,7 @@ GameObject:
   - component: {fileID: 815898622}
   - component: {fileID: 815898621}
   - component: {fileID: 815898620}
+  - component: {fileID: 815898624}
   m_Layer: 5
   m_Name: EndDialogue
   m_TagString: Untagged
@@ -3086,7 +3087,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 815898622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815898624}
+        m_TargetAssemblyTypeName: ScenesManager, Main
+        m_MethodName: LoadEndScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &815898621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3218,6 +3231,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815898618}
   m_CullTransparentMesh: 1
+--- !u!114 &815898624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815898618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e895f0886d35af7409c7bcecb54eac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &830964640
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,7 +4511,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078676746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0632be31e712c924ca8cd03e9e02d125, type: 3}
   m_Name: 
@@ -5261,17 +5286,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251492433}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0632be31e712c924ca8cd03e9e02d125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItems: []
-  health: {fileID: 0}
-  opponent: {fileID: 0}
-  valueText: {fileID: 0}
-  opponentName: {fileID: 0}
-  isOpponent: 0
+  health: {fileID: 1251492435}
+  opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
+  valueText: {fileID: 230893416}
+  opponentName: {fileID: 1078676749}
+  isOpponent: 1
   saveHolder: {fileID: 0}
 --- !u!1 &1263349332
 GameObject:
@@ -5940,9 +5965,9 @@ MonoBehaviour:
   possibleItems:
   - {fileID: 11400000, guid: 7f50166c8b5a5544ea70fc71e10e52cd, type: 2}
   health: {fileID: 1365776050}
-  opponent: {fileID: 0}
+  opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
   valueText: {fileID: 498663043}
-  opponentName: {fileID: 0}
+  opponentName: {fileID: 810283811}
   isOpponent: 0
   saveHolder: {fileID: 0}
 --- !u!1 &1381302157

@@ -674,6 +674,10 @@ Throughout the game you will encounter multiple confrontations.
 
 #gamemsg
 You will be presented with a prompt which you must choose how to respond, which is either through confronting or using a consumable item if needed. 
+
+#gamemsg
+You may equip items before battling, press E to open your inventory and equip any items you may want to equip. You won't be able to use consumables outside of battle though. But don't worry, you can use as many consumables as you want in battle. Good luck, and face this problem!
+
 #battletrigger
 
 #character:Karen
