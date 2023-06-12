@@ -16,16 +16,26 @@ public class OpponentInfo : MonoBehaviour
     {
         GameObject _myGameObject = GameObject.Find("GAMEMYDATA");
         saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
-        bool _genderMale = saveHolder.mySave.male;
 
-        if (_genderMale)
-        {
-            this.image.sprite = opponent.image;
-        }
-        else
+        if (!saveHolder.mySave.male)
         {
             this.image.sprite = female;
             opponent.name = "Karen";
         }
+        else
+        {
+            this.image.sprite = opponent.image;
+        }
+
+        //if (_genderMale)
+        //{
+        //    this.image.sprite = opponent.image;
+        //}
+        //else
+        //{
+        //    this.image.sprite = female;
+        //    opponent.name = "Karen";
+        //}
+        Debug.Log(opponent.name);
     }
 }
