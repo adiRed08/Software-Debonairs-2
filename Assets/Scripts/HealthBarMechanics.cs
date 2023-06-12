@@ -16,6 +16,9 @@ public class HealthBarMechanics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health.value = 100;
+        health.maxValue = 100;
+
         try
         {
             GameObject _myGameObject = GameObject.Find("GAMEMYDATA");
@@ -26,22 +29,31 @@ public class HealthBarMechanics : MonoBehaviour
 
         }
 
-        health.value = 100;
-        health.maxValue = 100;
-
         if (isOpponent)
         {
             opponentName.text = opponent.name;
             valueText.text = health.value.ToString() + "/" + health.maxValue.ToString();
         }
 
+        else if (!isOpponent)
+        {
+            opponentName.text = saveHolder.mySave.name;
+        }
+
+
         if (possibleItems[0].isEquipped)
         {
             health.maxValue = health.maxValue + 10;
             health.value = health.value + 10;
             valueText.text = health.value.ToString() + "/" + health.maxValue.ToString();
-            opponentName.text = saveHolder.mySave.name;
         }
+
+        else
+        {
+            valueText.text = health.value.ToString() + "/" + health.maxValue.ToString();
+        }
+
+
 
 
 

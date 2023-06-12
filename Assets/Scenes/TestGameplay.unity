@@ -4701,6 +4701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1803294054}
   - component: {fileID: 1803294055}
+  - component: {fileID: 1803294056}
   m_Layer: 0
   m_Name: StoryLoader
   m_TagString: Untagged
@@ -4755,6 +4756,7 @@ MonoBehaviour:
   rival: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
   senpai: {fileID: 21300000, guid: 00a042d28876fdd48bf66061685d5fa5, type: 3}
   prof_mary: {fileID: 21300000, guid: dd86ab3dc3dcc6f4e8f6ee098bd575f8, type: 3}
+  opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
   locker: {fileID: 271774116}
   locker2: {fileID: 962186770}
   lib: {fileID: 363091637}
@@ -4764,6 +4766,23 @@ MonoBehaviour:
   caf2: {fileID: 1013399171}
   _myGameObject: {fileID: 0}
   _saveHolder: {fileID: 0}
+--- !u!114 &1803294056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803294053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6140d48886680c648b94c2e60422c74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
+  image: {fileID: 0}
+  female: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
+  myGameObject: {fileID: 0}
+  saveHolder: {fileID: 0}
 --- !u!1 &1829452316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4776,7 +4795,6 @@ GameObject:
   - component: {fileID: 1829452320}
   - component: {fileID: 1829452319}
   - component: {fileID: 1829452318}
-  - component: {fileID: 1829452321}
   m_Layer: 5
   m_Name: rivalSprite
   m_TagString: Untagged
@@ -4894,21 +4912,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829452316}
   m_CullTransparentMesh: 1
---- !u!114 &1829452321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829452316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6140d48886680c648b94c2e60422c74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  opponent: {fileID: 11400000, guid: c61a6d384a1670247bf344b69b13dbad, type: 2}
-  image: {fileID: 0}
-  female: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
 --- !u!1 &1852177594
 GameObject:
   m_ObjectHideFlags: 0

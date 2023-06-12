@@ -36,6 +36,7 @@ public class StoryLoader : MonoBehaviour
     [SerializeField] private Sprite rival;
     [SerializeField] private Sprite senpai;
     [SerializeField] private Sprite prof_mary;
+    [SerializeField] private Opponent opponent;
     //backgrounds
     [SerializeField] private GameObject locker;
     [SerializeField] private GameObject locker2;

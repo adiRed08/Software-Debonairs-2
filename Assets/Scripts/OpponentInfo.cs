@@ -9,23 +9,34 @@ public class OpponentInfo : MonoBehaviour
     public Opponent opponent;
     public Image image;
     public Sprite female;
-    private GAMEMYDATA saveHolder;
+    [SerializeField] private GameObject myGameObject;
+    [SerializeField] private GAMEMYDATA saveHolder;
     //:)
 
     void Start()
     {
-        GameObject _myGameObject = GameObject.Find("GAMEMYDATA");
-        saveHolder = (GAMEMYDATA)_myGameObject.GetComponent(typeof(GAMEMYDATA));
-
-        if (!saveHolder.mySave.male)
+        try
         {
-            this.image.sprite = female;
-            opponent.name = "Karen";
+            myGameObject = GameObject.Find("GAMEMYDATA");
+            saveHolder = (GAMEMYDATA)myGameObject.GetComponent(typeof(GAMEMYDATA));
+        }
+        catch
+        {
+
+        }
+
+
+        if (saveHolder.mySave.male)
+        {
+            this.image.sprite = opponent.image;
+            
         }
         else
         {
-            this.image.sprite = opponent.image;
-        }
+            opponent.name = "Karen";
+            this.image.sprite = female;
+        }   
+    }
 
         //if (_genderMale)
         //{
@@ -36,6 +47,4 @@ public class OpponentInfo : MonoBehaviour
         //    this.image.sprite = female;
         //    opponent.name = "Karen";
         //}
-        Debug.Log(opponent.name);
-    }
 }

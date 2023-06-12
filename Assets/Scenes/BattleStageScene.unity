@@ -2737,6 +2737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 2099151104}
+  source: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!82 &800720179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4093,6 +4095,10 @@ PrefabInstance:
       propertyPath: female
       value: 
       objectReference: {fileID: 21300000, guid: af07468ef392a604d86c28c8c5b3e7ab, type: 3}
+    - target: {fileID: 6741806779748226703, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9076885730702466496, guid: 4c117cf2242403541b19cb3246256e4f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5213,8 +5219,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251492433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.3796508}
-  m_LocalScale: {x: 0.7725, y: 0.7725, z: 0.7725}
+  m_LocalPosition: {x: 0, y: 0, z: -2.3796601}
+  m_LocalScale: {x: 0.7724999, y: 0.7724999, z: 0.7724999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1078676747}
@@ -5225,7 +5231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -205.48906, y: 121.14447}
+  m_AnchoredPosition: {x: -205.48907, y: 121.14447}
   m_SizeDelta: {x: 183.7667, y: 24.4515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251492435
@@ -8101,23 +8107,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2549507077132507948, guid: 7901947801b778d4398c408add90ccfa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2549507077132507948, guid: 7901947801b778d4398c408add90ccfa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2549507077132507948, guid: 7901947801b778d4398c408add90ccfa, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1365776051}
+    - target: {fileID: 2549507077132507948, guid: 7901947801b778d4398c408add90ccfa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: heal
       objectReference: {fileID: 0}
     - target: {fileID: 2549507077132507948, guid: 7901947801b778d4398c408add90ccfa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DemoScript, Assembly-CSharp
+      value: HealthBarMechanics, Main
       objectReference: {fileID: 0}
     - target: {fileID: 2549507077132507948, guid: 7901947801b778d4398c408add90ccfa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Item, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3095703721411608039, guid: 7901947801b778d4398c408add90ccfa, type: 3}
       propertyPath: m_IsActive
@@ -10373,6 +10383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 2099151104}
+  source: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &2119192551
 GameObject:
   m_ObjectHideFlags: 0
